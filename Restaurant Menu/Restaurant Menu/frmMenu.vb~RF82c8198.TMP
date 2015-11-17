@@ -1,0 +1,1777 @@
+﻿' Program Name: Resturant Menu
+' Author:       Ryan Trad
+' Date:         September 22, 2010
+' Purpose:      The purpose of this application is to 
+'               allow costumers to order their food from 
+'               an electronic menu rather than having a 
+'               waiter come by and take you order.
+
+Option Strict On
+Imports System.Net.Mail
+
+Public Class frmMenu
+    ' These are the declarations for the radio buttons
+    ' so that the state can be saved.
+    Dim blnAddCola As Boolean
+    Dim blnAddLemonLime As Boolean
+    Dim blnAddGrape As Boolean
+    Dim blnAddOrange As Boolean
+    Dim blnAddApple As Boolean
+    Dim blnAddLemonade As Boolean
+    Dim blnAddCheesePizza As Boolean
+    Dim blnAddPepperoniPizza As Boolean
+    Dim blnAddVegetable As Boolean
+    Dim blnAddPepperoniCalzone As Boolean
+    Dim blnAddSausage As Boolean
+    Dim blnAddCheeseCalzone As Boolean
+    Dim blnAddRavioli As Boolean
+    Dim blnAddSpaghetti As Boolean
+    Dim blnAddFettuccini As Boolean
+    Dim blnAddChefs As Boolean
+    Dim blnAddGreek As Boolean
+    Dim blnAddItalian As Boolean
+
+    ' These are the declarations for each item price
+    ' and the total price.
+    Dim decCola As Decimal
+    Dim decLemonLime As Decimal
+    Dim decGrape As Decimal
+    Dim decOrange As Decimal
+    Dim decApple As Decimal
+    Dim decLemonade As Decimal
+    Dim decCheesePizza As Decimal
+    Dim decPepperoniPizza As Decimal
+    Dim decVegetable As Decimal
+    Dim decPepperoniCalzone As Decimal
+    Dim decSausageCalzone As Decimal
+    Dim decCheeseCalzone As Decimal
+    Dim decRavioli As Decimal
+    Dim decSpaghetti As Decimal
+    Dim decFettuccini As Decimal
+    Dim decChefs As Decimal
+    Dim decGreek As Decimal
+    Dim decItalian As Decimal
+    Dim decTotalPrice As Decimal
+
+    ' These are the declarations for the quantity
+    Dim intColaQuantity As Int32
+    Dim intLemonLimeQuantity As Int32
+    Dim intGrapeQuantity As Int32
+    Dim intOrangeQuantity As Int32
+    Dim intAppleQuantity As Int32
+    Dim intLemonadeQuantity As Int32
+    Dim intCheesePizzaQuantity As Int32
+    Dim intPepperoniPizzaQuantity As Int32
+    Dim intVegetableQuantity As Int32
+    Dim intPepperoniCalzoneQuantity As Int32
+    Dim intSausageQuantity As Int32
+    Dim intCheeseCalzoneQuantity As Int32
+    Dim intRavioliQuantity As Int32
+    Dim intSpaghettiQuantity As Int32
+    Dim intFettucciniQuantity As Int32
+    Dim intChefsQuantity As Int32
+    Dim intGreekQuantity As Int32
+    Dim intItalianQuantity As Int32
+
+    Private Sub btnBeverages_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBeverages.Click
+        ' This code is executed when the user clicks the
+        ' Beverages button. It makes the drink selections
+        ' visible and everything else invisible.
+
+        Me.pnlWaterNote.Visible = True
+        Me.lblWaterNote.Visible = True
+        Me.pnlBeverages.Visible = True
+        Me.lblSodas.Visible = True
+        Me.lblSodaMessage.Visible = True
+        Me.lblJuices.Visible = True
+        Me.pnlSodasAndPizzas.Visible = False
+        Me.lblCola.Visible = False
+        Me.lblLemonLime.Visible = False
+        Me.lblGrape.Visible = False
+        Me.pnlJuicesAndPastas.Visible = False
+        Me.lblOrange.Visible = False
+        Me.lblApple.Visible = False
+        Me.lblLemonade.Visible = False
+        Me.picCola.Visible = False
+        Me.picCola2.Visible = False
+        Me.picLemonLime.Visible = False
+        Me.picLemonLime2.Visible = False
+        Me.picGrape.Visible = False
+        Me.picGrape2.Visible = False
+        Me.picOrange.Visible = False
+        Me.picOrange2.Visible = False
+        Me.picApple.Visible = False
+        Me.picLemonade.Visible = False
+        Me.pnlEntrees.Visible = False
+        Me.lblPizza.Visible = False
+        Me.lblClazone.Visible = False
+        Me.lblPasta.Visible = False
+        Me.lblSalad.Visible = False
+        Me.lblCheesePizza.Visible = False
+        Me.picCheesePizza.Visible = False
+        Me.lblPepperoniPizza.Visible = False
+        Me.picPepperoniPizza.Visible = False
+        Me.lblVegetable.Visible = False
+        Me.picVegetable.Visible = False
+        Me.pnlCalzones.Visible = False
+        Me.lblPepperoniCalzone.Visible = False
+        Me.picPepperoniCalzone.Visible = False
+        Me.lblSausage.Visible = False
+        Me.picSausage.Visible = False
+        Me.lblCheeseCalzone.Visible = False
+        Me.picCheeseCalzone.Visible = False
+        Me.lblRavioli.Visible = False
+        Me.picRavioli.Visible = False
+        Me.lblSpaghetti.Visible = False
+        Me.picSpaghetti.Visible = False
+        Me.lblFettucini.Visible = False
+        Me.picFettuccini.Visible = False
+        Me.pnlSalads.Visible = False
+        Me.lblChefs.Visible = False
+        Me.picChefs.Visible = False
+        Me.lblGreek.Visible = False
+        Me.picGreek.Visible = False
+        Me.lblItalian.Visible = False
+        Me.picItalian.Visible = False
+        Me.radAddCola.Visible = False
+        Me.radAddLemonLime.Visible = False
+        Me.radAddGrape.Visible = False
+        Me.radAddOrange.Visible = False
+        Me.radAddApple.Visible = False
+        Me.radAddLemonade.Visible = False
+        Me.radAddCheesePizza.Visible = False
+        Me.radAddPepperoniPizza.Visible = False
+        Me.radAddVegetable.Visible = False
+        Me.radAddPepperoniCalzone.Visible = False
+        Me.radAddSausage.Visible = False
+        Me.radAddCheeseCalzone.Visible = False
+        Me.radAddRavioli.Visible = False
+        Me.radAddSpaghetti.Visible = False
+        Me.radAddFettuccini.Visible = False
+        Me.radAddChefs.Visible = False
+        Me.radAddGreek.Visible = False
+        Me.radAddItalian.Visible = False
+        Me.lblQuantity.Visible = False
+        Me.numQuantity.Visible = False
+        Me.btnSend.Enabled = True
+
+    End Sub
+
+    Private Sub lblSodas_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles lblSodas.MouseHover
+        ' This code is executed when the user hovers over
+        ' the Sodas label. It displays the types of sodas
+        ' and makes the juices invisible.
+
+        Me.pnlSodasAndPizzas.Visible = True
+        Me.lblCola.Visible = True
+        Me.lblLemonLime.Visible = True
+        Me.lblGrape.Visible = True
+        Me.lblCheesePizza.Visible = False
+        Me.lblPepperoniPizza.Visible = False
+        Me.lblVegetable.Visible = False
+        Me.pnlJuicesAndPastas.Visible = False
+        Me.lblOrange.Visible = False
+        Me.lblApple.Visible = False
+        Me.lblLemonade.Visible = False
+        Me.picCola.Visible = False
+        Me.picCola2.Visible = False
+        Me.picLemonLime.Visible = False
+        Me.picLemonLime2.Visible = False
+        Me.picGrape.Visible = False
+        Me.picGrape2.Visible = False
+        Me.picOrange.Visible = False
+        Me.picOrange2.Visible = False
+        Me.picApple.Visible = False
+        Me.picLemonade.Visible = False
+        Me.radAddCola.Visible = False
+        Me.radAddLemonLime.Visible = False
+        Me.radAddGrape.Visible = False
+        Me.radAddOrange.Visible = False
+        Me.radAddApple.Visible = False
+        Me.radAddLemonade.Visible = False
+        Me.lblQuantity.Visible = False
+        Me.numQuantity.Visible = False
+        Me.btnSend.Enabled = True
+
+    End Sub
+
+    Private Sub lblJuices_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles lblJuices.MouseHover
+        ' This code is executed when the user hovers over
+        ' the Juices label. It displays the types of juices
+        ' and makes the sodas invisible.
+
+        Me.pnlJuicesAndPastas.Visible = True
+        Me.lblOrange.Visible = True
+        Me.lblApple.Visible = True
+        Me.lblLemonade.Visible = True
+        Me.lblRavioli.Visible = False
+        Me.lblSpaghetti.Visible = False
+        Me.lblFettucini.Visible = False
+        Me.pnlSodasAndPizzas.Visible = False
+        Me.lblCola.Visible = False
+        Me.lblLemonLime.Visible = False
+        Me.lblGrape.Visible = False
+        Me.picCola.Visible = False
+        Me.picCola2.Visible = False
+        Me.picLemonLime.Visible = False
+        Me.picLemonLime2.Visible = False
+        Me.picGrape.Visible = False
+        Me.picGrape2.Visible = False
+        Me.picOrange.Visible = False
+        Me.picOrange2.Visible = False
+        Me.picApple.Visible = False
+        Me.picLemonade.Visible = False
+        Me.radAddCola.Visible = False
+        Me.radAddLemonLime.Visible = False
+        Me.radAddGrape.Visible = False
+        Me.radAddOrange.Visible = False
+        Me.radAddApple.Visible = False
+        Me.radAddLemonade.Visible = False
+        Me.lblQuantity.Visible = False
+        Me.numQuantity.Visible = False
+        Me.btnSend.Enabled = True
+
+    End Sub
+
+    Private Sub lblCola_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles lblCola.MouseHover
+        ' This code is executed when the user hovers over
+        ' the Cola label. It makes the other pictures 
+        ' invisible and makes the Cola pictures visible
+        ' along with the Add To Receipt button.
+
+        Me.picCola2.Visible = True
+        Me.picCola.Visible = True
+        Me.picLemonLime.Visible = False
+        Me.picLemonLime2.Visible = False
+        Me.picGrape.Visible = False
+        Me.picGrape2.Visible = False
+        Me.radAddCola.Visible = True
+        Me.radAddLemonLime.Visible = False
+        Me.radAddGrape.Visible = False
+        Me.lblQuantity.Visible = True
+        Me.numQuantity.Visible = True
+        Me.btnSend.Enabled = True
+
+    End Sub
+
+    Private Sub lblLemonLime_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles lblLemonLime.MouseHover
+        ' This code is executed when the user hovers over
+        ' the Lemon-Lime label. It makes the other pictures
+        ' invisible and makes the Lemon-Lime pictures visible 
+        ' along with the Add To Receipt button.
+
+        Me.picLemonLime2.Visible = True
+        Me.picLemonLime.Visible = True
+        Me.picCola.Visible = False
+        Me.picCola2.Visible = False
+        Me.picGrape.Visible = False
+        Me.picGrape2.Visible = False
+        Me.radAddLemonLime.Visible = True
+        Me.radAddCola.Visible = False
+        Me.radAddGrape.Visible = False
+        Me.lblQuantity.Visible = True
+        Me.numQuantity.Visible = True
+        Me.btnSend.Enabled = True
+
+    End Sub
+
+    Private Sub lblGrape_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles lblGrape.MouseHover
+        ' This code is executed when the user hovers over
+        ' the Grape label. It makes the other pictures
+        ' invisible and makes the Grape pictures visible 
+        ' along with the Add To Receipt button.
+
+        Me.picGrape2.Visible = True
+        Me.picGrape.Visible = True
+        Me.picCola.Visible = False
+        Me.picCola2.Visible = False
+        Me.picLemonLime.Visible = False
+        Me.picLemonLime2.Visible = False
+        Me.radAddGrape.Visible = True
+        Me.radAddCola.Visible = False
+        Me.radAddLemonLime.Visible = False
+        Me.lblQuantity.Visible = True
+        Me.numQuantity.Visible = True
+        Me.btnSend.Enabled = True
+
+    End Sub
+
+    Private Sub lblOrange_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles lblOrange.MouseHover
+        ' This code is executed when the user hovers over
+        ' the Orange label. It makes the other pictures
+        ' invisible and makes the Orange pictures visible 
+        ' along with the Add To Receipt button.
+
+        Me.picOrange2.Visible = True
+        Me.picOrange.Visible = True
+        Me.picApple.Visible = False
+        Me.picLemonade.Visible = False
+        Me.radAddOrange.Visible = True
+        Me.radAddApple.Visible = False
+        Me.radAddLemonade.Visible = False
+        Me.lblQuantity.Visible = True
+        Me.numQuantity.Visible = True
+        Me.btnSend.Enabled = True
+
+    End Sub
+
+    Private Sub lblApple_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles lblApple.MouseHover
+        ' This code is executed when the user hovers over
+        ' the Apple label. It makes the other pictures
+        ' invisible and makes the Apple picture visible 
+        ' along with the Add To Receipt button.
+
+        Me.picApple.Visible = True
+        Me.picOrange.Visible = False
+        Me.picOrange2.Visible = False
+        Me.picLemonade.Visible = False
+        Me.radAddApple.Visible = True
+        Me.radAddOrange.Visible = False
+        Me.radAddLemonade.Visible = False
+        Me.lblQuantity.Visible = True
+        Me.numQuantity.Visible = True
+        Me.btnSend.Enabled = True
+
+    End Sub
+
+    Private Sub lblLemonade_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles lblLemonade.MouseHover
+        ' This code is executed when the user hovers over
+        ' the Lemonade label. It makes the other pictures
+        ' invisible and makes the Lemonade picture visible 
+        ' along with the Add To Receipt button.
+
+        Me.picLemonade.Visible = True
+        Me.picOrange.Visible = False
+        Me.picOrange2.Visible = False
+        Me.picApple.Visible = False
+        Me.radAddLemonade.Visible = True
+        Me.radAddOrange.Visible = False
+        Me.radAddApple.Visible = False
+        Me.lblQuantity.Visible = True
+        Me.numQuantity.Visible = True
+        Me.btnSend.Enabled = True
+
+    End Sub
+
+    Private Sub btnEntrees_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEntrees.Click
+        ' This code is executed when the user clicks the
+        ' Entrees button. It makes the food selections
+        ' visible and everything else invisible.
+
+        Me.pnlEntrees.Visible = True
+        Me.lblPizza.Visible = True
+        Me.lblClazone.Visible = True
+        Me.lblPasta.Visible = True
+        Me.lblSalad.Visible = True
+        Me.lblCheesePizza.Visible = False
+        Me.picCheesePizza.Visible = False
+        Me.lblPepperoniPizza.Visible = False
+        Me.picPepperoniPizza.Visible = False
+        Me.lblVegetable.Visible = False
+        Me.picVegetable.Visible = False
+        Me.pnlCalzones.Visible = False
+        Me.lblPepperoniCalzone.Visible = False
+        Me.picPepperoniCalzone.Visible = False
+        Me.lblSausage.Visible = False
+        Me.picSausage.Visible = False
+        Me.lblCheeseCalzone.Visible = False
+        Me.picCheeseCalzone.Visible = False
+        Me.lblRavioli.Visible = False
+        Me.picRavioli.Visible = False
+        Me.lblSpaghetti.Visible = False
+        Me.picSpaghetti.Visible = False
+        Me.lblFettucini.Visible = False
+        Me.picFettuccini.Visible = False
+        Me.pnlSalads.Visible = False
+        Me.lblChefs.Visible = False
+        Me.picChefs.Visible = False
+        Me.lblGreek.Visible = False
+        Me.picGreek.Visible = False
+        Me.lblItalian.Visible = False
+        Me.picItalian.Visible = False
+        Me.pnlWaterNote.Visible = False
+        Me.lblWaterNote.Visible = False
+        Me.pnlBeverages.Visible = False
+        Me.lblSodas.Visible = False
+        Me.lblSodaMessage.Visible = False
+        Me.lblJuices.Visible = False
+        Me.pnlSodasAndPizzas.Visible = False
+        Me.lblCola.Visible = False
+        Me.lblLemonLime.Visible = False
+        Me.lblGrape.Visible = False
+        Me.pnlJuicesAndPastas.Visible = False
+        Me.lblOrange.Visible = False
+        Me.lblApple.Visible = False
+        Me.lblLemonade.Visible = False
+        Me.picCola.Visible = False
+        Me.picCola2.Visible = False
+        Me.picLemonLime.Visible = False
+        Me.picLemonLime2.Visible = False
+        Me.picGrape.Visible = False
+        Me.picGrape2.Visible = False
+        Me.picOrange.Visible = False
+        Me.picOrange2.Visible = False
+        Me.picApple.Visible = False
+        Me.picLemonade.Visible = False
+        Me.radAddCola.Visible = False
+        Me.radAddLemonLime.Visible = False
+        Me.radAddGrape.Visible = False
+        Me.radAddOrange.Visible = False
+        Me.radAddApple.Visible = False
+        Me.radAddLemonade.Visible = False
+        Me.radAddCheesePizza.Visible = False
+        Me.radAddPepperoniPizza.Visible = False
+        Me.radAddVegetable.Visible = False
+        Me.radAddPepperoniCalzone.Visible = False
+        Me.radAddSausage.Visible = False
+        Me.radAddCheeseCalzone.Visible = False
+        Me.radAddRavioli.Visible = False
+        Me.radAddSpaghetti.Visible = False
+        Me.radAddFettuccini.Visible = False
+        Me.radAddChefs.Visible = False
+        Me.radAddGreek.Visible = False
+        Me.radAddItalian.Visible = False
+        Me.lblQuantity.Visible = False
+        Me.numQuantity.Visible = False
+        Me.btnSend.Enabled = True
+
+    End Sub
+
+    Private Sub lblPizza_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles lblPizza.MouseHover
+        ' This code is executed when the user hovers over
+        ' the Pizza label. It displays the types of pizzas
+        ' and makes the rest invisible.
+
+        Me.pnlSodasAndPizzas.Visible = True
+        Me.lblCola.Visible = False
+        Me.lblLemonLime.Visible = False
+        Me.lblGrape.Visible = False
+        Me.lblCheesePizza.Visible = True
+        Me.picCheesePizza.Visible = False
+        Me.lblPepperoniPizza.Visible = True
+        Me.picPepperoniPizza.Visible = False
+        Me.lblVegetable.Visible = True
+        Me.picVegetable.Visible = False
+        Me.pnlCalzones.Visible = False
+        Me.lblPepperoniCalzone.Visible = False
+        Me.picPepperoniCalzone.Visible = False
+        Me.lblSausage.Visible = False
+        Me.picSausage.Visible = False
+        Me.lblCheeseCalzone.Visible = False
+        Me.picCheeseCalzone.Visible = False
+        Me.pnlJuicesAndPastas.Visible = False
+        Me.lblRavioli.Visible = False
+        Me.picRavioli.Visible = False
+        Me.lblSpaghetti.Visible = False
+        Me.picSpaghetti.Visible = False
+        Me.lblFettucini.Visible = False
+        Me.picFettuccini.Visible = False
+        Me.pnlSalads.Visible = False
+        Me.lblChefs.Visible = False
+        Me.picChefs.Visible = False
+        Me.lblGreek.Visible = False
+        Me.picGreek.Visible = False
+        Me.lblItalian.Visible = False
+        Me.picItalian.Visible = False
+        Me.radAddCheesePizza.Visible = False
+        Me.radAddPepperoniPizza.Visible = False
+        Me.radAddVegetable.Visible = False
+        Me.radAddPepperoniCalzone.Visible = False
+        Me.radAddSausage.Visible = False
+        Me.radAddCheeseCalzone.Visible = False
+        Me.radAddRavioli.Visible = False
+        Me.radAddSpaghetti.Visible = False
+        Me.radAddFettuccini.Visible = False
+        Me.radAddChefs.Visible = False
+        Me.radAddGreek.Visible = False
+        Me.radAddItalian.Visible = False
+        Me.lblQuantity.Visible = False
+        Me.numQuantity.Visible = False
+        Me.btnSend.Enabled = True
+
+    End Sub
+
+    Private Sub lblClazone_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles lblClazone.MouseHover
+        ' This code is executed when the user hovers over
+        ' the Calzone label. It displays the types of calzones
+        ' and makes the rest invisible.
+
+        Me.pnlSodasAndPizzas.Visible = False
+        Me.lblCheesePizza.Visible = False
+        Me.picCheesePizza.Visible = False
+        Me.lblPepperoniPizza.Visible = False
+        Me.picPepperoniPizza.Visible = False
+        Me.lblVegetable.Visible = True
+        Me.picVegetable.Visible = False
+        Me.pnlCalzones.Visible = True
+        Me.lblPepperoniCalzone.Visible = True
+        Me.picPepperoniCalzone.Visible = False
+        Me.lblSausage.Visible = True
+        Me.picSausage.Visible = False
+        Me.lblCheeseCalzone.Visible = True
+        Me.picCheeseCalzone.Visible = False
+        Me.lblRavioli.Visible = False
+        Me.pnlJuicesAndPastas.Visible = False
+        Me.picRavioli.Visible = False
+        Me.lblSpaghetti.Visible = False
+        Me.picSpaghetti.Visible = False
+        Me.lblFettucini.Visible = False
+        Me.picFettuccini.Visible = False
+        Me.pnlSalads.Visible = False
+        Me.lblChefs.Visible = False
+        Me.picChefs.Visible = False
+        Me.lblGreek.Visible = False
+        Me.picGreek.Visible = False
+        Me.lblItalian.Visible = False
+        Me.picItalian.Visible = False
+        Me.radAddCheesePizza.Visible = False
+        Me.radAddPepperoniPizza.Visible = False
+        Me.radAddVegetable.Visible = False
+        Me.radAddPepperoniCalzone.Visible = False
+        Me.radAddSausage.Visible = False
+        Me.radAddCheeseCalzone.Visible = False
+        Me.radAddRavioli.Visible = False
+        Me.radAddSpaghetti.Visible = False
+        Me.radAddFettuccini.Visible = False
+        Me.radAddChefs.Visible = False
+        Me.radAddGreek.Visible = False
+        Me.radAddItalian.Visible = False
+        Me.lblQuantity.Visible = False
+        Me.numQuantity.Visible = False
+        Me.btnSend.Enabled = True
+
+    End Sub
+
+    Private Sub lblPasta_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles lblPasta.MouseHover
+        ' This code is executed when the user hovers over
+        ' the Pasta label. It displays the types of pastas
+        ' and makes the rest invisible.
+
+        Me.pnlSodasAndPizzas.Visible = False
+        Me.lblCheesePizza.Visible = False
+        Me.picCheesePizza.Visible = False
+        Me.lblPepperoniPizza.Visible = False
+        Me.picPepperoniPizza.Visible = False
+        Me.lblVegetable.Visible = False
+        Me.picVegetable.Visible = False
+        Me.pnlCalzones.Visible = False
+        Me.lblPepperoniCalzone.Visible = False
+        Me.picPepperoniCalzone.Visible = False
+        Me.lblSausage.Visible = False
+        Me.picSausage.Visible = False
+        Me.lblCheeseCalzone.Visible = False
+        Me.picCheeseCalzone.Visible = False
+        Me.pnlJuicesAndPastas.Visible = True
+        Me.lblRavioli.Visible = True
+        Me.picRavioli.Visible = False
+        Me.lblSpaghetti.Visible = True
+        Me.picSpaghetti.Visible = False
+        Me.lblFettucini.Visible = True
+        Me.picFettuccini.Visible = False
+        Me.pnlSalads.Visible = False
+        Me.lblChefs.Visible = False
+        Me.picChefs.Visible = False
+        Me.lblGreek.Visible = False
+        Me.picGreek.Visible = False
+        Me.lblItalian.Visible = False
+        Me.picItalian.Visible = False
+        Me.radAddCheesePizza.Visible = False
+        Me.radAddPepperoniPizza.Visible = False
+        Me.radAddVegetable.Visible = False
+        Me.radAddPepperoniCalzone.Visible = False
+        Me.radAddSausage.Visible = False
+        Me.radAddCheeseCalzone.Visible = False
+        Me.radAddRavioli.Visible = False
+        Me.radAddSpaghetti.Visible = False
+        Me.radAddFettuccini.Visible = False
+        Me.radAddChefs.Visible = False
+        Me.radAddGreek.Visible = False
+        Me.radAddItalian.Visible = False
+        Me.lblQuantity.Visible = False
+        Me.numQuantity.Visible = False
+        Me.btnSend.Enabled = True
+
+    End Sub
+
+    Private Sub lblSalad_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles lblSalad.MouseHover
+        ' This code is executed when the user hovers over
+        ' the Salad label. It displays the types of salads
+        ' and makes the rest invisible.
+
+        Me.pnlSodasAndPizzas.Visible = False
+        Me.lblCheesePizza.Visible = False
+        Me.picCheesePizza.Visible = False
+        Me.lblPepperoniPizza.Visible = False
+        Me.picPepperoniPizza.Visible = False
+        Me.lblVegetable.Visible = False
+        Me.picVegetable.Visible = False
+        Me.pnlCalzones.Visible = False
+        Me.lblPepperoniCalzone.Visible = False
+        Me.picPepperoniCalzone.Visible = False
+        Me.lblSausage.Visible = False
+        Me.picSausage.Visible = False
+        Me.lblCheeseCalzone.Visible = False
+        Me.picCheeseCalzone.Visible = False
+        Me.lblRavioli.Visible = False
+        Me.pnlJuicesAndPastas.Visible = False
+        Me.picRavioli.Visible = False
+        Me.lblSpaghetti.Visible = False
+        Me.picSpaghetti.Visible = False
+        Me.lblFettucini.Visible = False
+        Me.picFettuccini.Visible = False
+        Me.pnlSalads.Visible = True
+        Me.lblChefs.Visible = True
+        Me.picChefs.Visible = False
+        Me.lblGreek.Visible = True
+        Me.picGreek.Visible = False
+        Me.lblItalian.Visible = True
+        Me.picItalian.Visible = False
+        Me.radAddCheesePizza.Visible = False
+        Me.radAddPepperoniPizza.Visible = False
+        Me.radAddVegetable.Visible = False
+        Me.radAddPepperoniCalzone.Visible = False
+        Me.radAddSausage.Visible = False
+        Me.radAddCheeseCalzone.Visible = False
+        Me.radAddRavioli.Visible = False
+        Me.radAddSpaghetti.Visible = False
+        Me.radAddFettuccini.Visible = False
+        Me.radAddChefs.Visible = False
+        Me.radAddGreek.Visible = False
+        Me.radAddItalian.Visible = False
+        Me.lblQuantity.Visible = False
+        Me.numQuantity.Visible = False
+        Me.btnSend.Enabled = True
+
+    End Sub
+
+    Private Sub lblCheesePizza_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles lblCheesePizza.MouseHover
+        ' This code is executed when the user hovers over
+        ' the Cheese label. It makes the other pictures
+        ' invisible and makes the Cheese picture visible 
+        ' along with the Add To Receipt button.
+
+        Me.picCheesePizza.Visible = True
+        Me.picPepperoniPizza.Visible = False
+        Me.picVegetable.Visible = False
+        Me.radAddCheesePizza.Visible = True
+        Me.radAddPepperoniPizza.Visible = False
+        Me.radAddVegetable.Visible = False
+        Me.lblQuantity.Visible = True
+        Me.numQuantity.Visible = True
+        Me.btnSend.Enabled = True
+
+    End Sub
+
+    Private Sub lblPepperoniPizza_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles lblPepperoniPizza.MouseHover
+        ' This code is executed when the user hovers over
+        ' the Pepperoni label. It makes the other pictures
+        ' invisible and makes the Pepperoni picture visible 
+        ' along with the Add To Receipt button.
+
+        Me.picPepperoniPizza.Visible = True
+        Me.picCheesePizza.Visible = False
+        Me.picVegetable.Visible = False
+        Me.radAddPepperoniPizza.Visible = True
+        Me.radAddCheesePizza.Visible = False
+        Me.radAddVegetable.Visible = False
+        Me.lblQuantity.Visible = True
+        Me.numQuantity.Visible = True
+        Me.btnSend.Enabled = True
+
+    End Sub
+
+    Private Sub lblVegetable_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles lblVegetable.MouseHover
+        ' This code is executed when the user hovers over
+        ' the Vegetable label. It makes the other pictures
+        ' invisible and makes the Vegetable picture visible 
+        ' along with the Add To Receipt button.
+
+        Me.picVegetable.Visible = True
+        Me.picCheesePizza.Visible = False
+        Me.picPepperoniPizza.Visible = False
+        Me.radAddVegetable.Visible = True
+        Me.radAddCheesePizza.Visible = False
+        Me.radAddPepperoniPizza.Visible = False
+        Me.lblQuantity.Visible = True
+        Me.numQuantity.Visible = True
+        Me.btnSend.Enabled = True
+
+    End Sub
+
+    Private Sub lblPepperoniCalzone_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles lblPepperoniCalzone.MouseHover
+        ' This code is executed when the user hovers over
+        ' the Pepperoni label. It makes the other pictures
+        ' invisible and makes the Pepperoni picture visible 
+        ' along with the Add To Receipt button.
+
+        Me.picPepperoniCalzone.Visible = True
+        Me.picSausage.Visible = False
+        Me.picCheeseCalzone.Visible = False
+        Me.radAddPepperoniCalzone.Visible = True
+        Me.radAddSausage.Visible = False
+        Me.radAddCheeseCalzone.Visible = False
+        Me.lblQuantity.Visible = True
+        Me.numQuantity.Visible = True
+        Me.btnSend.Enabled = True
+
+    End Sub
+
+    Private Sub lblSausage_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles lblSausage.MouseHover
+        ' This code is executed when the user hovers over
+        ' the Sausage label. It makes the other pictures
+        ' invisible and makes the Sausage picture visible 
+        ' along with the Add To Receipt button.
+
+        Me.picSausage.Visible = True
+        Me.picPepperoniCalzone.Visible = False
+        Me.picCheeseCalzone.Visible = False
+        Me.radAddSausage.Visible = True
+        Me.radAddPepperoniCalzone.Visible = False
+        Me.radAddCheeseCalzone.Visible = False
+        Me.lblQuantity.Visible = True
+        Me.numQuantity.Visible = True
+        Me.btnSend.Enabled = True
+
+    End Sub
+
+    Private Sub lblCheeseCalzone_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles lblCheeseCalzone.MouseHover
+        ' This code is executed when the user hovers over
+        ' the Cheese label. It makes the other pictures
+        ' invisible and makes the Cheese picture visible 
+        ' along with the Add To Receipt button.
+
+        Me.picCheeseCalzone.Visible = True
+        Me.picPepperoniCalzone.Visible = False
+        Me.picSausage.Visible = False
+        Me.radAddCheeseCalzone.Visible = True
+        Me.radAddPepperoniCalzone.Visible = False
+        Me.radAddSausage.Visible = False
+        Me.lblQuantity.Visible = True
+        Me.numQuantity.Visible = True
+        Me.btnSend.Enabled = True
+
+    End Sub
+
+    Private Sub lblRavioli_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles lblRavioli.MouseHover
+        ' This code is executed when the user hovers over
+        ' the Ravioli label. It makes the other pictures
+        ' invisible and makes the Ravioli picture visible 
+        ' along with the Add To Receipt button.
+
+        Me.picRavioli.Visible = True
+        Me.picSpaghetti.Visible = False
+        Me.picFettuccini.Visible = False
+        Me.radAddRavioli.Visible = True
+        Me.radAddSpaghetti.Visible = False
+        Me.radAddFettuccini.Visible = False
+        Me.lblQuantity.Visible = True
+        Me.numQuantity.Visible = True
+        Me.btnSend.Enabled = True
+
+    End Sub
+
+    Private Sub lblSpaghetti_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles lblSpaghetti.MouseHover
+        ' This code is executed when the user hovers over
+        ' the Spaghetti label. It makes the other pictures
+        ' invisible and makes the Spaghetti picture visible 
+        ' along with the Add To Receipt button.
+
+        Me.picSpaghetti.Visible = True
+        Me.picRavioli.Visible = False
+        Me.picFettuccini.Visible = False
+        Me.radAddSpaghetti.Visible = True
+        Me.radAddRavioli.Visible = False
+        Me.radAddFettuccini.Visible = False
+        Me.lblQuantity.Visible = True
+        Me.numQuantity.Visible = True
+        Me.btnSend.Enabled = True
+
+    End Sub
+
+    Private Sub lblFettucini_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles lblFettucini.MouseHover
+        ' This code is executed when the user hovers over
+        ' the Fettuccini label. It makes the other pictures
+        ' invisible and makes the Fettuccini picture visible 
+        ' along with the Add To Receipt button.
+
+        Me.picFettuccini.Visible = True
+        Me.picRavioli.Visible = False
+        Me.picSpaghetti.Visible = False
+        Me.radAddFettuccini.Visible = True
+        Me.radAddRavioli.Visible = False
+        Me.radAddSpaghetti.Visible = False
+        Me.lblQuantity.Visible = True
+        Me.numQuantity.Visible = True
+        Me.btnSend.Enabled = True
+
+    End Sub
+
+    Private Sub lblChefs_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles lblChefs.MouseHover
+        ' This code is executed when the user hovers over
+        ' the Chef's Salad label. It makes the other pictures
+        ' invisible and makes the Chef's Salad picture visible 
+        ' along with the Add To Receipt button.
+
+        Me.picChefs.Visible = True
+        Me.picGreek.Visible = False
+        Me.picItalian.Visible = False
+        Me.radAddCheeseCalzone.Visible = True
+        Me.radAddGreek.Visible = False
+        Me.radAddItalian.Visible = False
+        Me.lblQuantity.Visible = True
+        Me.numQuantity.Visible = True
+        Me.btnSend.Enabled = True
+
+    End Sub
+
+    Private Sub lblGreek_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles lblGreek.MouseHover
+        ' This code is executed when the user hovers over
+        ' the Greek Salad label. It makes the other pictures
+        ' invisible and makes the Greek Salad picture visible 
+        ' along with the Add To Receipt button.
+
+        Me.picGreek.Visible = True
+        Me.picChefs.Visible = False
+        Me.picItalian.Visible = False
+        Me.radAddGreek.Visible = True
+        Me.radAddCheeseCalzone.Visible = False
+        Me.radAddItalian.Visible = False
+        Me.lblQuantity.Visible = True
+        Me.numQuantity.Visible = True
+        Me.btnSend.Enabled = True
+
+    End Sub
+
+    Private Sub lblItalian_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles lblItalian.MouseHover
+        ' This code is executed when the user hovers over
+        ' the Italian Salad label. It makes the other pictures
+        ' invisible and makes the Italian Salad picture visible 
+        ' along with the Add To Receipt button.
+
+        Me.picItalian.Visible = True
+        Me.picChefs.Visible = False
+        Me.picGreek.Visible = False
+        Me.radAddItalian.Visible = True
+        Me.radAddCheeseCalzone.Visible = False
+        Me.radAddGreek.Visible = False
+        Me.lblQuantity.Visible = True
+        Me.numQuantity.Visible = True
+        Me.btnSend.Enabled = True
+
+    End Sub
+
+    Private Sub radAddCola_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles radAddCola.CheckedChanged
+        ' This code is executed when the user clicks the
+        ' Add to Reciept button. It adds the item to the 
+        ' list on the right and also displays the price
+        ' and quantity.
+
+        If Me.radAddCola.Checked = True Then
+            blnAddCola = True
+
+            If Me.numQuantity.Value = 1 Then
+                Me.lstReciept.Items.Add("Cola.....................$1.99")
+                intColaQuantity = 1
+            ElseIf Me.numQuantity.Value = 2 Then
+                Me.lstReciept.Items.Add("Cola.....................$1.99")
+                Me.lstReciept.Items.Add("Cola.....................$1.99")
+                intColaQuantity = 2
+            ElseIf Me.numQuantity.Value = 3 Then
+                Me.lstReciept.Items.Add("Cola.....................$1.99")
+                Me.lstReciept.Items.Add("Cola.....................$1.99")
+                Me.lstReciept.Items.Add("Cola.....................$1.99")
+                intColaQuantity = 3
+            ElseIf Me.numQuantity.Value = 4 Then
+                Me.lstReciept.Items.Add("Cola.....................$1.99")
+                Me.lstReciept.Items.Add("Cola.....................$1.99")
+                Me.lstReciept.Items.Add("Cola.....................$1.99")
+                Me.lstReciept.Items.Add("Cola.....................$1.99")
+                intColaQuantity = 4
+            ElseIf Me.numQuantity.Value = 5 Then
+                Me.lstReciept.Items.Add("Cola......................$1.99")
+                Me.lstReciept.Items.Add("Cola......................$1.99")
+                Me.lstReciept.Items.Add("Cola......................$1.99")
+                Me.lstReciept.Items.Add("Cola......................$1.99")
+                Me.lstReciept.Items.Add("Cola......................$1.99")
+                intColaQuantity = 5
+                Me.btnSend.Enabled = False
+
+            End If
+        End If
+    End Sub
+
+    Private Sub radAddLemonLime_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles radAddLemonLime.CheckedChanged
+        ' This code is executed when the user clicks the
+        ' Add to Reciept button. It adds the item to the 
+        ' list on the right and also displays the price
+        ' and quantity.
+
+        If Me.radAddLemonLime.Checked = True Then
+            blnAddLemonLime = True
+
+            If Me.numQuantity.Value = 1 Then
+                Me.lstReciept.Items.Add("Lemon-Lime.........$1.99")
+                intLemonLimeQuantity = 1
+            ElseIf Me.numQuantity.Value = 2 Then
+                Me.lstReciept.Items.Add("Lemon-Lime.........$1.99")
+                Me.lstReciept.Items.Add("Lemon-Lime.........$1.99")
+                intLemonLimeQuantity = 2
+            ElseIf Me.numQuantity.Value = 3 Then
+                Me.lstReciept.Items.Add("Lemon-Lime.........$1.99")
+                Me.lstReciept.Items.Add("Lemon-Lime.........$1.99")
+                Me.lstReciept.Items.Add("Lemon-Lime.........$1.99")
+                intLemonLimeQuantity = 3
+            ElseIf Me.numQuantity.Value = 4 Then
+                Me.lstReciept.Items.Add("Lemon-Lime.........$1.99")
+                Me.lstReciept.Items.Add("Lemon-Lime.........$1.99")
+                Me.lstReciept.Items.Add("Lemon-Lime.........$1.99")
+                Me.lstReciept.Items.Add("Lemon-Lime.........$1.99")
+                intLemonLimeQuantity = 4
+            ElseIf Me.numQuantity.Value = 5 Then
+                Me.lstReciept.Items.Add("Lemon-Lime.........$1.99")
+                Me.lstReciept.Items.Add("Lemon-Lime.........$1.99")
+                Me.lstReciept.Items.Add("Lemon-Lime.........$1.99")
+                Me.lstReciept.Items.Add("Lemon-Lime.........$1.99")
+                Me.lstReciept.Items.Add("Lemon-Lime.........$1.99")
+                intLemonLimeQuantity = 5
+                Me.btnSend.Enabled = False
+
+            End If
+        End If
+    End Sub
+
+    Private Sub radAddGrape_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles radAddGrape.CheckedChanged
+        ' This code is executed when the user clicks the
+        ' Add to Reciept button. It adds the item to the 
+        ' list on the right and also displays the price
+        ' and quantity.
+
+        If Me.radAddGrape.Checked = True Then
+            blnAddGrape = True
+
+            If Me.numQuantity.Value = 1 Then
+                Me.lstReciept.Items.Add("Grape..................$1.99")
+                intGrapeQuantity = 1
+            ElseIf Me.numQuantity.Value = 2 Then
+                Me.lstReciept.Items.Add("Grape..................$1.99")
+                Me.lstReciept.Items.Add("Grape..................$1.99")
+                intGrapeQuantity = 2
+            ElseIf Me.numQuantity.Value = 3 Then
+                Me.lstReciept.Items.Add("Grape..................$1.99")
+                Me.lstReciept.Items.Add("Grape..................$1.99")
+                Me.lstReciept.Items.Add("Grape..................$1.99")
+                intGrapeQuantity = 3
+            ElseIf Me.numQuantity.Value = 4 Then
+                Me.lstReciept.Items.Add("Grape..................$1.99")
+                Me.lstReciept.Items.Add("Grape..................$1.99")
+                Me.lstReciept.Items.Add("Grape..................$1.99")
+                Me.lstReciept.Items.Add("Grape..................$1.99")
+                intGrapeQuantity = 4
+            ElseIf Me.numQuantity.Value = 5 Then
+                Me.lstReciept.Items.Add("Grape..................$1.99")
+                Me.lstReciept.Items.Add("Grape..................$1.99")
+                Me.lstReciept.Items.Add("Grape..................$1.99")
+                Me.lstReciept.Items.Add("Grape..................$1.99")
+                Me.lstReciept.Items.Add("Grape..................$1.99")
+                intGrapeQuantity = 5
+                Me.btnSend.Enabled = False
+
+            End If
+        End If
+    End Sub
+
+    Private Sub radAddOrange_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles radAddOrange.CheckedChanged
+        ' This code is executed when the user clicks the
+        ' Add to Reciept button. It adds the item to the 
+        ' list on the right and also displays the price
+        ' and quantity.
+
+        If Me.radAddOrange.Checked = True Then
+            blnAddOrange = True
+
+            If Me.numQuantity.Value = 1 Then
+                Me.lstReciept.Items.Add("Orange................$1.49")
+                intOrangeQuantity = 1
+            ElseIf Me.numQuantity.Value = 2 Then
+                Me.lstReciept.Items.Add("Orange................$1.49")
+                Me.lstReciept.Items.Add("Orange................$1.49")
+                intOrangeQuantity = 2
+            ElseIf Me.numQuantity.Value = 3 Then
+                Me.lstReciept.Items.Add("Orange................$1.49")
+                Me.lstReciept.Items.Add("Orange................$1.49")
+                Me.lstReciept.Items.Add("Orange................$1.49")
+                intOrangeQuantity = 3
+            ElseIf Me.numQuantity.Value = 4 Then
+                Me.lstReciept.Items.Add("Orange................$1.49")
+                Me.lstReciept.Items.Add("Orange................$1.49")
+                Me.lstReciept.Items.Add("Orange................$1.49")
+                Me.lstReciept.Items.Add("Orange................$1.49")
+                intOrangeQuantity = 4
+            ElseIf Me.numQuantity.Value = 5 Then
+                Me.lstReciept.Items.Add("Orange................$1.49")
+                Me.lstReciept.Items.Add("Orange................$1.49")
+                Me.lstReciept.Items.Add("Orange................$1.49")
+                Me.lstReciept.Items.Add("Orange................$1.49")
+                Me.lstReciept.Items.Add("Orange................$1.49")
+                intOrangeQuantity = 5
+                Me.btnSend.Enabled = False
+
+            End If
+        End If
+    End Sub
+
+    Private Sub radAddApple_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles radAddApple.CheckedChanged
+        ' This code is executed when the user clicks the
+        ' Add to Reciept button. It adds the item to the 
+        ' list on the right and also displays the price
+        ' and quantity.
+
+
+        If Me.radAddApple.Checked = True Then
+            blnAddApple = True
+
+            If Me.numQuantity.Value = 1 Then
+                Me.lstReciept.Items.Add("Apple...................$1.49")
+                intAppleQuantity = 1
+            ElseIf Me.numQuantity.Value = 2 Then
+                Me.lstReciept.Items.Add("Apple...................$1.49")
+                Me.lstReciept.Items.Add("Apple...................$1.49")
+                intAppleQuantity = 2
+            ElseIf Me.numQuantity.Value = 3 Then
+                Me.lstReciept.Items.Add("Apple...................$1.49")
+                Me.lstReciept.Items.Add("Apple...................$1.49")
+                Me.lstReciept.Items.Add("Apple...................$1.49")
+                intAppleQuantity = 3
+            ElseIf Me.numQuantity.Value = 4 Then
+                Me.lstReciept.Items.Add("Apple...................$1.49")
+                Me.lstReciept.Items.Add("Apple...................$1.49")
+                Me.lstReciept.Items.Add("Apple...................$1.49")
+                Me.lstReciept.Items.Add("Apple...................$1.49")
+                intAppleQuantity = 4
+            ElseIf Me.numQuantity.Value = 5 Then
+                Me.lstReciept.Items.Add("Apple...................$1.49")
+                Me.lstReciept.Items.Add("Apple...................$1.49")
+                Me.lstReciept.Items.Add("Apple...................$1.49")
+                Me.lstReciept.Items.Add("Apple...................$1.49")
+                Me.lstReciept.Items.Add("Apple...................$1.49")
+                intAppleQuantity = 5
+                Me.btnSend.Enabled = False
+
+            End If
+        End If
+    End Sub
+
+    Private Sub radAddLemonade_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles radAddLemonade.CheckedChanged
+        ' This code is executed when the user clicks the
+        ' Add to Reciept button. It adds the item to the 
+        ' list on the right and also displays the price
+        ' and quantity.
+
+        If Me.radAddLemonade.Checked = True Then
+            blnAddLemonade = True
+
+            If Me.numQuantity.Value = 1 Then
+                Me.lstReciept.Items.Add("Lemonade...........$1.49")
+                intLemonadeQuantity = 1
+            ElseIf Me.numQuantity.Value = 2 Then
+                Me.lstReciept.Items.Add("Lemonade...........$1.49")
+                Me.lstReciept.Items.Add("Lemonade...........$1.49")
+                intLemonadeQuantity = 2
+            ElseIf Me.numQuantity.Value = 3 Then
+                Me.lstReciept.Items.Add("Lemonade...........$1.49")
+                Me.lstReciept.Items.Add("Lemonade...........$1.49")
+                Me.lstReciept.Items.Add("Lemonade...........$1.49")
+                intLemonadeQuantity = 3
+            ElseIf Me.numQuantity.Value = 4 Then
+                Me.lstReciept.Items.Add("Lemonade...........$1.49")
+                Me.lstReciept.Items.Add("Lemonade...........$1.49")
+                Me.lstReciept.Items.Add("Lemonade...........$1.49")
+                Me.lstReciept.Items.Add("Lemonade...........$1.49")
+                intLemonadeQuantity = 4
+            ElseIf Me.numQuantity.Value = 5 Then
+                Me.lstReciept.Items.Add("Lemonade...........$1.49")
+                Me.lstReciept.Items.Add("Lemonade...........$1.49")
+                Me.lstReciept.Items.Add("Lemonade...........$1.49")
+                Me.lstReciept.Items.Add("Lemonade...........$1.49")
+                Me.lstReciept.Items.Add("Lemonade...........$1.49")
+                intLemonadeQuantity = 5
+                Me.btnSend.Enabled = False
+
+            End If
+        End If
+    End Sub
+
+    Private Sub radAddCheesePizza_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles radAddCheesePizza.CheckedChanged
+        ' This code is executed when the user clicks the
+        ' Add to Reciept button. It adds the item to the 
+        ' list on the right and also displays the price
+        ' and quantity.
+
+        If Me.radAddCheesePizza.Checked = True Then
+            blnAddCheesePizza = True
+
+            If Me.numQuantity.Value = 1 Then
+                Me.lstReciept.Items.Add("CheesePizza....$10.99")
+                intCheesePizzaQuantity = 1
+            ElseIf Me.numQuantity.Value = 2 Then
+                Me.lstReciept.Items.Add("CheesePizza....$10.99")
+                Me.lstReciept.Items.Add("CheesePizza....$10.99")
+                intCheesePizzaQuantity = 2
+            ElseIf Me.numQuantity.Value = 3 Then
+                Me.lstReciept.Items.Add("CheesePizza....$10.99")
+                Me.lstReciept.Items.Add("CheesePizza....$10.99")
+                Me.lstReciept.Items.Add("CheesePizza....$10.99")
+                intCheesePizzaQuantity = 3
+            ElseIf Me.numQuantity.Value = 4 Then
+                Me.lstReciept.Items.Add("CheesePizza....$10.99")
+                Me.lstReciept.Items.Add("CheesePizza....$10.99")
+                Me.lstReciept.Items.Add("CheesePizza....$10.99")
+                Me.lstReciept.Items.Add("CheesePizza....$10.99")
+                intCheesePizzaQuantity = 4
+            ElseIf Me.numQuantity.Value = 5 Then
+                Me.lstReciept.Items.Add("CheesePizza....$10.99")
+                Me.lstReciept.Items.Add("CheesePizza....$10.99")
+                Me.lstReciept.Items.Add("CheesePizza....$10.99")
+                Me.lstReciept.Items.Add("CheesePizza....$10.99")
+                Me.lstReciept.Items.Add("CheesePizza....$10.99")
+                intCheesePizzaQuantity = 5
+                Me.btnSend.Enabled = False
+
+            End If
+        End If
+    End Sub
+
+    Private Sub radAddPepperoniPizza_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles radAddPepperoniPizza.CheckedChanged
+        ' This code is executed when the user clicks the
+        ' Add to Reciept button. It adds the item to the 
+        ' list on the right and also displays the price
+        ' and quantity.
+
+        If Me.radAddPepperoniPizza.Checked = True Then
+            blnAddPepperoniPizza = True
+
+            If Me.numQuantity.Value = 1 Then
+                Me.lstReciept.Items.Add("PepperoniPizza..$10.99")
+                intPepperoniPizzaQuantity = 1
+            ElseIf Me.numQuantity.Value = 2 Then
+                Me.lstReciept.Items.Add("PepperoniPizza..$10.99")
+                Me.lstReciept.Items.Add("PepperoniPizza..$10.99")
+                intPepperoniPizzaQuantity = 2
+            ElseIf Me.numQuantity.Value = 3 Then
+                Me.lstReciept.Items.Add("PepperoniPizza..$10.99")
+                Me.lstReciept.Items.Add("PepperoniPizza..$10.99")
+                Me.lstReciept.Items.Add("PepperoniPizza..$10.99")
+                intPepperoniPizzaQuantity = 3
+            ElseIf Me.numQuantity.Value = 4 Then
+                Me.lstReciept.Items.Add("PepperoniPizza..$10.99")
+                Me.lstReciept.Items.Add("PepperoniPizza..$10.99")
+                Me.lstReciept.Items.Add("PepperoniPizza..$10.99")
+                Me.lstReciept.Items.Add("PepperoniPizza..$10.99")
+                intPepperoniPizzaQuantity = 4
+            ElseIf Me.numQuantity.Value = 5 Then
+                Me.lstReciept.Items.Add("PepperoniPizza..$10.99")
+                Me.lstReciept.Items.Add("PepperoniPizza..$10.99")
+                Me.lstReciept.Items.Add("PepperoniPizza..$10.99")
+                Me.lstReciept.Items.Add("PepperoniPizza..$10.99")
+                Me.lstReciept.Items.Add("PepperoniPizza..$10.99")
+                intPepperoniPizzaQuantity = 5
+                Me.btnSend.Enabled = False
+
+            End If
+        End If
+    End Sub
+
+    Private Sub radAddVegetable_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles radAddVegetable.CheckedChanged
+        ' This code is executed when the user clicks the
+        ' Add to Reciept button. It adds the item to the 
+        ' list on the right and also displays the price
+        ' and quantity.
+
+        If Me.radAddVegetable.Checked = True Then
+            blnAddVegetable = True
+
+            If Me.numQuantity.Value = 1 Then
+                Me.lstReciept.Items.Add("VegetablePizza..$10.99")
+                intVegetableQuantity = 1
+            ElseIf Me.numQuantity.Value = 2 Then
+                Me.lstReciept.Items.Add("VegetablePizza..$10.99")
+                Me.lstReciept.Items.Add("VegetablePizza..$10.99")
+                intVegetableQuantity = 2
+            ElseIf Me.numQuantity.Value = 3 Then
+                Me.lstReciept.Items.Add("VegetablePizza..$10.99")
+                Me.lstReciept.Items.Add("VegetablePizza..$10.99")
+                Me.lstReciept.Items.Add("VegetablePizza..$10.99")
+                intVegetableQuantity = 3
+            ElseIf Me.numQuantity.Value = 4 Then
+                Me.lstReciept.Items.Add("VegetablePizza..$10.99")
+                Me.lstReciept.Items.Add("VegetablePizza..$10.99")
+                Me.lstReciept.Items.Add("VegetablePizza..$10.99")
+                Me.lstReciept.Items.Add("VegetablePizza..$10.99")
+                intVegetableQuantity = 4
+            ElseIf Me.numQuantity.Value = 5 Then
+                Me.lstReciept.Items.Add("VegetablePizza..$10.99")
+                Me.lstReciept.Items.Add("VegetablePizza..$10.99")
+                Me.lstReciept.Items.Add("VegetablePizza..$10.99")
+                Me.lstReciept.Items.Add("VegetablePizza..$10.99")
+                Me.lstReciept.Items.Add("VegetablePizza..$10.99")
+                intVegetableQuantity = 5
+                Me.btnSend.Enabled = False
+
+            End If
+        End If
+    End Sub
+
+    Private Sub radAddPepperoniCalzone_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles radAddPepperoniCalzone.CheckedChanged
+        ' This code is executed when the user clicks the
+        ' Add to Reciept button. It adds the item to the 
+        ' list on the right and also displays the price
+        ' and quantity.
+
+        If Me.radAddPepperoniCalzone.Checked = True Then
+            blnAddPepperoniCalzone = True
+
+            If Me.numQuantity.Value = 1 Then
+                Me.lstReciept.Items.Add("PepperoniCalzone$6.99")
+                intPepperoniCalzoneQuantity = 1
+            ElseIf Me.numQuantity.Value = 2 Then
+                Me.lstReciept.Items.Add("PepperoniCalzone$6.99")
+                Me.lstReciept.Items.Add("PepperoniCalzone$6.99")
+                intPepperoniCalzoneQuantity = 2
+            ElseIf Me.numQuantity.Value = 3 Then
+                Me.lstReciept.Items.Add("PepperoniCalzone$6.99")
+                Me.lstReciept.Items.Add("PepperoniCalzone$6.99")
+                Me.lstReciept.Items.Add("PepperoniCalzone$6.99")
+                intPepperoniCalzoneQuantity = 3
+            ElseIf Me.numQuantity.Value = 4 Then
+                Me.lstReciept.Items.Add("PepperoniCalzone$6.99")
+                Me.lstReciept.Items.Add("PepperoniCalzone$6.99")
+                Me.lstReciept.Items.Add("PepperoniCalzone$6.99")
+                Me.lstReciept.Items.Add("PepperoniCalzone$6.99")
+                intPepperoniCalzoneQuantity = 4
+            ElseIf Me.numQuantity.Value = 5 Then
+                Me.lstReciept.Items.Add("PepperoniCalzone$6.99")
+                Me.lstReciept.Items.Add("PepperoniCalzone$6.99")
+                Me.lstReciept.Items.Add("PepperoniCalzone$6.99")
+                Me.lstReciept.Items.Add("PepperoniCalzone$6.99")
+                Me.lstReciept.Items.Add("PepperoniCalzone$6.99")
+                intPepperoniCalzoneQuantity = 5
+                Me.btnSend.Enabled = False
+
+            End If
+        End If
+    End Sub
+
+    Private Sub radAddSausage_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles radAddSausage.CheckedChanged
+        ' This code is executed when the user clicks the
+        ' Add to Reciept button. It adds the item to the 
+        ' list on the right and also displays the price
+        ' and quantity.
+
+        If Me.radAddSausage.Checked = True Then
+            blnAddSausage = True
+
+            If Me.numQuantity.Value = 1 Then
+                Me.lstReciept.Items.Add("SausageCalzone..$6.99")
+                intSausageQuantity = 1
+            ElseIf Me.numQuantity.Value = 2 Then
+                Me.lstReciept.Items.Add("SausageCalzone..$6.99")
+                Me.lstReciept.Items.Add("SausageCalzone..$6.99")
+                intSausageQuantity = 2
+            ElseIf Me.numQuantity.Value = 3 Then
+                Me.lstReciept.Items.Add("SausageCalzone..$6.99")
+                Me.lstReciept.Items.Add("SausageCalzone..$6.99")
+                Me.lstReciept.Items.Add("SausageCalzone..$6.99")
+                intSausageQuantity = 3
+            ElseIf Me.numQuantity.Value = 4 Then
+                Me.lstReciept.Items.Add("SausageCalzone..$6.99")
+                Me.lstReciept.Items.Add("SausageCalzone..$6.99")
+                Me.lstReciept.Items.Add("SausageCalzone..$6.99")
+                Me.lstReciept.Items.Add("SausageCalzone..$6.99")
+                intSausageQuantity = 4
+            ElseIf Me.numQuantity.Value = 5 Then
+                Me.lstReciept.Items.Add("SausageCalzone..$6.99")
+                Me.lstReciept.Items.Add("SausageCalzone..$6.99")
+                Me.lstReciept.Items.Add("SausageCalzone..$6.99")
+                Me.lstReciept.Items.Add("SausageCalzone..$6.99")
+                Me.lstReciept.Items.Add("SausageCalzone..$6.99")
+                intSausageQuantity = 5
+                Me.btnSend.Enabled = False
+
+            End If
+        End If
+    End Sub
+
+    Private Sub radAddCheeseCalzone_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles radAddCheeseCalzone.CheckedChanged
+        ' This code is executed when the user clicks the
+        ' Add to Reciept button. It adds the item to the 
+        ' list on the right and also displays the price
+        ' and quantity.
+
+        If Me.radAddCheeseCalzone.Checked = True Then
+            blnAddCheeseCalzone = True
+
+            If Me.numQuantity.Value = 1 Then
+                Me.lstReciept.Items.Add("CheeseCalzone....$6.99")
+                intCheeseCalzoneQuantity = 1
+            ElseIf Me.numQuantity.Value = 2 Then
+                Me.lstReciept.Items.Add("CheeseCalzone....$6.99")
+                Me.lstReciept.Items.Add("CheeseCalzone....$6.99")
+                intCheeseCalzoneQuantity = 2
+            ElseIf Me.numQuantity.Value = 3 Then
+                Me.lstReciept.Items.Add("CheeseCalzone....$6.99")
+                Me.lstReciept.Items.Add("CheeseCalzone....$6.99")
+                Me.lstReciept.Items.Add("CheeseCalzone....$6.99")
+                intCheeseCalzoneQuantity = 3
+            ElseIf Me.numQuantity.Value = 4 Then
+                Me.lstReciept.Items.Add("CheeseCalzone....$6.99")
+                Me.lstReciept.Items.Add("CheeseCalzone....$6.99")
+                Me.lstReciept.Items.Add("CheeseCalzone....$6.99")
+                Me.lstReciept.Items.Add("CheeseCalzone....$6.99")
+                intCheeseCalzoneQuantity = 4
+            ElseIf Me.numQuantity.Value = 5 Then
+                Me.lstReciept.Items.Add("CheeseCalzone....$6.99")
+                Me.lstReciept.Items.Add("CheeseCalzone....$6.99")
+                Me.lstReciept.Items.Add("CheeseCalzone....$6.99")
+                Me.lstReciept.Items.Add("CheeseCalzone....$6.99")
+                Me.lstReciept.Items.Add("CheeseCalzone....$6.99")
+                intCheeseCalzoneQuantity = 5
+                Me.btnSend.Enabled = False
+
+            End If
+        End If
+    End Sub
+
+    Private Sub radAddRavioli_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles radAddRavioli.CheckedChanged
+        ' This code is executed when the user clicks the
+        ' Add to Reciept button. It adds the item to the 
+        ' list on the right and also displays the price
+        ' and quantity.
+
+        If Me.radAddRavioli.Checked = True Then
+            blnAddRavioli = True
+
+            If Me.numQuantity.Value = 1 Then
+                Me.lstReciept.Items.Add("Ravioli..................$5.49")
+                intRavioliQuantity = 1
+            ElseIf Me.numQuantity.Value = 2 Then
+                Me.lstReciept.Items.Add("Ravioli..................$5.49")
+                Me.lstReciept.Items.Add("Ravioli..................$5.49")
+                intRavioliQuantity = 2
+            ElseIf Me.numQuantity.Value = 3 Then
+                Me.lstReciept.Items.Add("Ravioli..................$5.49")
+                Me.lstReciept.Items.Add("Ravioli..................$5.49")
+                Me.lstReciept.Items.Add("Ravioli..................$5.49")
+                intRavioliQuantity = 3
+            ElseIf Me.numQuantity.Value = 4 Then
+                Me.lstReciept.Items.Add("Ravioli..................$5.49")
+                Me.lstReciept.Items.Add("Ravioli..................$5.49")
+                Me.lstReciept.Items.Add("Ravioli..................$5.49")
+                Me.lstReciept.Items.Add("Ravioli..................$5.49")
+                intRavioliQuantity = 4
+            ElseIf Me.numQuantity.Value = 5 Then
+                Me.lstReciept.Items.Add("Ravioli..................$5.49")
+                Me.lstReciept.Items.Add("Ravioli..................$5.49")
+                Me.lstReciept.Items.Add("Ravioli..................$5.49")
+                Me.lstReciept.Items.Add("Ravioli..................$5.49")
+                Me.lstReciept.Items.Add("Ravioli..................$5.49")
+                intRavioliQuantity = 5
+                Me.btnSend.Enabled = False
+
+            End If
+        End If
+    End Sub
+
+    Private Sub radAddSpaghetti_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles radAddSpaghetti.CheckedChanged
+        ' This code is executed when the user clicks the
+        ' Add to Reciept button. It adds the item to the 
+        ' list on the right and also displays the price
+        ' and quantity.
+
+        If Me.radAddSpaghetti.Checked = True Then
+            blnAddSpaghetti = True
+
+            If Me.numQuantity.Value = 1 Then
+                Me.lstReciept.Items.Add("Spaghetti..............$5.49")
+                intSpaghettiQuantity = 1
+            ElseIf Me.numQuantity.Value = 2 Then
+                Me.lstReciept.Items.Add("Spaghetti..............$5.49")
+                Me.lstReciept.Items.Add("Spaghetti..............$5.49")
+                intSpaghettiQuantity = 2
+            ElseIf Me.numQuantity.Value = 3 Then
+                Me.lstReciept.Items.Add("Spaghetti..............$5.49")
+                Me.lstReciept.Items.Add("Spaghetti..............$5.49")
+                Me.lstReciept.Items.Add("Spaghetti..............$5.49")
+                intSpaghettiQuantity = 3
+            ElseIf Me.numQuantity.Value = 4 Then
+                Me.lstReciept.Items.Add("Spaghetti..............$5.49")
+                Me.lstReciept.Items.Add("Spaghetti..............$5.49")
+                Me.lstReciept.Items.Add("Spaghetti..............$5.49")
+                Me.lstReciept.Items.Add("Spaghetti..............$5.49")
+                intSpaghettiQuantity = 4
+            ElseIf Me.numQuantity.Value = 5 Then
+                Me.lstReciept.Items.Add("Spaghetti..............$5.49")
+                Me.lstReciept.Items.Add("Spaghetti..............$5.49")
+                Me.lstReciept.Items.Add("Spaghetti..............$5.49")
+                Me.lstReciept.Items.Add("Spaghetti..............$5.49")
+                Me.lstReciept.Items.Add("Spaghetti..............$5.49")
+                intSpaghettiQuantity = 5
+                Me.btnSend.Enabled = False
+
+            End If
+        End If
+    End Sub
+
+    Private Sub radAddFettuccini_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles radAddFettuccini.CheckedChanged
+        ' This code is executed when the user clicks the
+        ' Add to Reciept button. It adds the item to the 
+        ' list on the right and also displays the price
+        ' and quantity.
+
+        If Me.radAddFettuccini.Checked = True Then
+            blnAddFettuccini = True
+
+            If Me.numQuantity.Value = 1 Then
+                Me.lstReciept.Items.Add("Fettuccini..............$5.49")
+                intFettucciniQuantity = 1
+            ElseIf Me.numQuantity.Value = 2 Then
+                Me.lstReciept.Items.Add("Fettuccini..............$5.49")
+                Me.lstReciept.Items.Add("Fettuccini..............$5.49")
+                intFettucciniQuantity = 2
+            ElseIf Me.numQuantity.Value = 3 Then
+                Me.lstReciept.Items.Add("Fettuccini..............$5.49")
+                Me.lstReciept.Items.Add("Fettuccini..............$5.49")
+                Me.lstReciept.Items.Add("Fettuccini..............$5.49")
+                intFettucciniQuantity = 3
+            ElseIf Me.numQuantity.Value = 4 Then
+                Me.lstReciept.Items.Add("Fettuccini..............$5.49")
+                Me.lstReciept.Items.Add("Fettuccini..............$5.49")
+                Me.lstReciept.Items.Add("Fettuccini..............$5.49")
+                Me.lstReciept.Items.Add("Fettuccini..............$5.49")
+                intFettucciniQuantity = 4
+            ElseIf Me.numQuantity.Value = 5 Then
+                Me.lstReciept.Items.Add("Fettuccini..............$5.49")
+                Me.lstReciept.Items.Add("Fettuccini..............$5.49")
+                Me.lstReciept.Items.Add("Fettuccini..............$5.49")
+                Me.lstReciept.Items.Add("Fettuccini..............$5.49")
+                Me.lstReciept.Items.Add("Fettuccini..............$5.49")
+                intFettucciniQuantity = 5
+                Me.btnSend.Enabled = False
+
+            End If
+        End If
+    End Sub
+
+    Private Sub radAddChefs_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles radAddChefs.CheckedChanged
+        ' This code is executed when the user clicks the
+        ' Add to Reciept button. It adds the item to the 
+        ' list on the right and also displays the price
+        ' and quantity.
+
+
+        If Me.radAddChefs.Checked = True Then
+            blnAddChefs = True
+
+            If Me.numQuantity.Value = 1 Then
+                Me.lstReciept.Items.Add("Chef'sSalad..........$4.49")
+                intChefsQuantity = 1
+            ElseIf Me.numQuantity.Value = 2 Then
+                Me.lstReciept.Items.Add("Chef'sSalad..........$4.49")
+                Me.lstReciept.Items.Add("Chef'sSalad..........$4.49")
+                intChefsQuantity = 2
+            ElseIf Me.numQuantity.Value = 3 Then
+                Me.lstReciept.Items.Add("Chef'sSalad..........$4.49")
+                Me.lstReciept.Items.Add("Chef'sSalad..........$4.49")
+                Me.lstReciept.Items.Add("Chef'sSalad..........$4.49")
+                intChefsQuantity = 3
+            ElseIf Me.numQuantity.Value = 4 Then
+                Me.lstReciept.Items.Add("Chef'sSalad..........$4.49")
+                Me.lstReciept.Items.Add("Chef'sSalad..........$4.49")
+                Me.lstReciept.Items.Add("Chef'sSalad..........$4.49")
+                Me.lstReciept.Items.Add("Chef'sSalad..........$4.49")
+                intChefsQuantity = 4
+            ElseIf Me.numQuantity.Value = 5 Then
+                Me.lstReciept.Items.Add("Chef'sSalad..........$4.49")
+                Me.lstReciept.Items.Add("Chef'sSalad..........$4.49")
+                Me.lstReciept.Items.Add("Chef'sSalad..........$4.49")
+                Me.lstReciept.Items.Add("Chef'sSalad..........$4.49")
+                Me.lstReciept.Items.Add("Chef'sSalad..........$4.49")
+                intChefsQuantity = 5
+                Me.btnSend.Enabled = False
+
+            End If
+        End If
+    End Sub
+
+    Private Sub radAddGreek_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles radAddGreek.CheckedChanged
+        ' This code is executed when the user clicks the
+        ' Add to Reciept button. It adds the item to the 
+        ' list on the right and also displays the price
+        ' and quantity.
+
+        If Me.radAddGreek.Checked = True Then
+            blnAddGreek = True
+
+            If Me.numQuantity.Value = 1 Then
+                Me.lstReciept.Items.Add("GreekSalad..........$4.49")
+                intGreekQuantity = 1
+            ElseIf Me.numQuantity.Value = 2 Then
+                Me.lstReciept.Items.Add("GreekSalad..........$4.49")
+                Me.lstReciept.Items.Add("GreekSalad..........$4.49")
+                intGreekQuantity = 2
+            ElseIf Me.numQuantity.Value = 3 Then
+                Me.lstReciept.Items.Add("GreekSalad..........$4.49")
+                Me.lstReciept.Items.Add("GreekSalad..........$4.49")
+                Me.lstReciept.Items.Add("GreekSalad..........$4.49")
+                intGreekQuantity = 3
+            ElseIf Me.numQuantity.Value = 4 Then
+                Me.lstReciept.Items.Add("GreekSalad..........$4.49")
+                Me.lstReciept.Items.Add("GreekSalad..........$4.49")
+                Me.lstReciept.Items.Add("GreekSalad..........$4.49")
+                Me.lstReciept.Items.Add("GreekSalad..........$4.49")
+                intGreekQuantity = 4
+            ElseIf Me.numQuantity.Value = 5 Then
+                Me.lstReciept.Items.Add("GreekSalad..........$4.49")
+                Me.lstReciept.Items.Add("GreekSalad..........$4.49")
+                Me.lstReciept.Items.Add("GreekSalad..........$4.49")
+                Me.lstReciept.Items.Add("GreekSalad..........$4.49")
+                Me.lstReciept.Items.Add("GreekSalad..........$4.49")
+                intGreekQuantity = 5
+                Me.btnSend.Enabled = False
+
+            End If
+        End If
+    End Sub
+
+    Private Sub radAddItalian_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles radAddItalian.CheckedChanged
+        ' This code is executed when the user clicks the
+        ' Add to Reciept button. It adds the item to the 
+        ' list on the right and also displays the price
+        ' and quantity.
+
+        If Me.radAddItalian.Checked = True Then
+            blnAddItalian = True
+
+            If Me.numQuantity.Value = 1 Then
+                Me.lstReciept.Items.Add("ItalianSalad..........$4.49")
+                intItalianQuantity = 1
+            ElseIf Me.numQuantity.Value = 2 Then
+                Me.lstReciept.Items.Add("ItalianSalad..........$4.49")
+                Me.lstReciept.Items.Add("ItalianSalad..........$4.49")
+                intItalianQuantity = 2
+            ElseIf Me.numQuantity.Value = 3 Then
+                Me.lstReciept.Items.Add("ItalianSalad..........$4.49")
+                Me.lstReciept.Items.Add("ItalianSalad..........$4.49")
+                Me.lstReciept.Items.Add("ItalianSalad..........$4.49")
+                intItalianQuantity = 3
+            ElseIf Me.numQuantity.Value = 4 Then
+                Me.lstReciept.Items.Add("ItalianSalad..........$4.49")
+                Me.lstReciept.Items.Add("ItalianSalad..........$4.49")
+                Me.lstReciept.Items.Add("ItalianSalad..........$4.49")
+                Me.lstReciept.Items.Add("ItalianSalad..........$4.49")
+                intItalianQuantity = 4
+            ElseIf Me.numQuantity.Value = 5 Then
+                Me.lstReciept.Items.Add("ItalianSalad..........$4.49")
+                Me.lstReciept.Items.Add("ItalianSalad..........$4.49")
+                Me.lstReciept.Items.Add("ItalianSalad..........$4.49")
+                Me.lstReciept.Items.Add("ItalianSalad..........$4.49")
+                Me.lstReciept.Items.Add("ItalianSalad..........$4.49")
+                intItalianQuantity = 5
+                Me.btnSend.Enabled = False
+
+            End If
+        End If
+    End Sub
+
+    Private Sub btnClearReciept_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnClearReciept.Click
+        ' This code is executed when the user clicks the
+        ' Clear button. It clears the items in the 
+        ' list on the right.
+
+        Me.lstReciept.Items.Clear()
+        Me.radAddCola.Checked = False
+        blnAddCola = False
+        Me.radAddGrape.Checked = False
+        blnAddGrape = False
+        Me.radAddLemonLime.Checked = False
+        blnAddLemonLime = False
+        Me.radAddOrange.Checked = False
+        blnAddOrange = False
+        Me.radAddApple.Checked = False
+        blnAddApple = False
+        Me.radAddLemonade.Checked = False
+        blnAddLemonade = False
+        Me.radAddCheesePizza.Checked = False
+        blnAddCheesePizza = False
+        Me.radAddPepperoniPizza.Checked = False
+        blnAddPepperoniPizza = False
+        Me.radAddVegetable.Checked = False
+        blnAddVegetable = False
+        Me.radAddPepperoniCalzone.Checked = False
+        blnAddPepperoniCalzone = False
+        Me.radAddSausage.Checked = False
+        blnAddSausage = False
+        Me.radAddCheeseCalzone.Checked = False
+        blnAddCheeseCalzone = False
+        Me.radAddRavioli.Checked = False
+        blnAddRavioli = False
+        Me.radAddSpaghetti.Checked = False
+        blnAddSpaghetti = False
+        Me.radAddFettuccini.Checked = False
+        blnAddFettuccini = False
+        Me.radAddChefs.Checked = False
+        blnAddChefs = False
+        Me.radAddGreek.Checked = False
+        blnAddGreek = False
+        Me.radAddItalian.Checked = False
+        blnAddItalian = False
+        decCola = 0D
+        decLemonLime = 0D
+        decGrape = 0D
+        decOrange = 0D
+        decApple = 0D
+        decLemonade = 0D
+        decCheesePizza = 0D
+        decPepperoniPizza = 0D
+        decVegetable = 0D
+        decPepperoniCalzone = 0D
+        decSausageCalzone = 0D
+        decCheeseCalzone = 0D
+        decRavioli = 0D
+        decSpaghetti = 0D
+        decFettuccini = 0D
+        decChefs = 0D
+        decGreek = 0D
+        decItalian = 0D
+        Me.lblTotalPrice.Text = ("Total: $0.00")
+        Me.btnSend.Enabled = False
+
+    End Sub
+
+    Private Sub btnTotal_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTotal.Click
+        ' This code is executed when the user clicks
+        ' the total button. It calculated to total of 
+        ' the purchase and sends it to the label at the 
+        ' bottom of the reciept.
+
+        Dim decSoda As Decimal = 1.99D
+        Dim decJuice As Decimal = 1.49D
+        Dim decPizza As Decimal = 10.99D
+        Dim decCalzone As Decimal = 6.99D
+        Dim decPasta As Decimal = 5.49D
+        Dim decSalad As Decimal = 4.45D
+
+        If blnAddCola = True Then
+            decCola = (decSoda * intColaQuantity)
+        End If
+        If blnAddLemonLime = True Then
+            decLemonLime = (decSoda * intLemonLimeQuantity)
+        End If
+        If blnAddGrape = True Then
+            decGrape = (decSoda * intGrapeQuantity)
+        End If
+        If blnAddOrange = True Then
+            decOrange = (decJuice * intOrangeQuantity)
+        End If
+        If blnAddApple = True Then
+            decOrange = (decJuice * intAppleQuantity)
+        End If
+        If blnAddLemonade = True Then
+            decLemonade = (decJuice * intLemonadeQuantity)
+        End If
+        If blnAddCheesePizza = True Then
+            decCheesePizza = (decPizza * intCheesePizzaQuantity)
+        End If
+        If blnAddPepperoniPizza = True Then
+            decPepperoniPizza = (decPizza * intPepperoniPizzaQuantity)
+        End If
+        If blnAddVegetable = True Then
+            decVegetable = (decPizza * intVegetableQuantity)
+        End If
+        If blnAddPepperoniCalzone = True Then
+            decPepperoniCalzone = (decCalzone * intPepperoniCalzoneQuantity)
+        End If
+        If blnAddSausage = True Then
+            decSausageCalzone = (decCalzone * intSausageQuantity)
+        End If
+        If blnAddCheeseCalzone = True Then
+            decCheeseCalzone = (decCalzone * intCheeseCalzoneQuantity)
+        End If
+        If blnAddRavioli = True Then
+            decRavioli = (decPasta * intRavioliQuantity)
+        End If
+        If blnAddSpaghetti = True Then
+            decSpaghetti = (decPasta * intSpaghettiQuantity)
+        End If
+        If blnAddFettuccini = True Then
+            decFettuccini = (decPasta * intFettucciniQuantity)
+        End If
+        If blnAddChefs = True Then
+            decChefs = (decSalad * intChefsQuantity)
+        End If
+        If blnAddGreek = True Then
+            decGreek = (decSalad * intGreekQuantity)
+        End If
+        If blnAddItalian = True Then
+            decItalian = (decSalad * intItalianQuantity)
+        End If
+        decTotalPrice = decCola + decLemonLime + decGrape + decOrange + decApple + decLemonade + decCheesePizza + _
+        decPepperoniPizza + decVegetable + decPepperoniCalzone + decSausageCalzone + decCheeseCalzone + decRavioli + _
+        decSpaghetti + decFettuccini + decChefs + decGreek + decItalian
+        Me.lblTotalPrice.Text = ("Total: ") & _
+        decTotalPrice.ToString("C")
+        Me.btnSend.Enabled = True
+
+    End Sub
+
+    Private Sub btnSend_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSend.Click
+        ' This code is executed when the user clicks 
+        ' the send button. It sends and email to another
+        ' computer.
+
+        If MsgBox(frmInformation.txtName.Text.ToString() & _
+                  " are you sure you want to send in you order to the kitchen?", MsgBoxStyle.YesNo, "Warning") = Windows.Forms.DialogResult.Yes Then
+            Dim Order As New MailMessage
+            Order.Subject = ("Table" & _
+                frmInformation.numTable.Text.ToString() & _
+                "Order")
+            Order.To.Add("resturantmenu.sfp@gmail.com")
+            Order.From = New MailAddress("resturantmenu.sfp@gmail.com")
+            Order.Body = ("Cola: " & _
+                intColaQuantity.ToString() & "; Lemon-Lime Soda: " & _
+                intLemonLimeQuantity.ToString() & "; Grape Soda: " & _
+                intGrapeQuantity.ToString() & "; Orange Juice: " & _
+                intOrangeQuantity.ToString() & "; Apple Juice: " & _
+                intAppleQuantity.ToString() & "; Lemonade: " & _
+                intLemonadeQuantity.ToString() & "; Cheese Pizza: " & _
+                intCheesePizzaQuantity.ToString() & "; Pepperoni Pizza: " & _
+                intPepperoniPizzaQuantity.ToString() & "; Vegetable Pizza: " & _
+                intVegetableQuantity.ToString() & "; Pepperoni Calzone: " & _
+                intPepperoniCalzoneQuantity.ToString() & "; Sausage Calzone: " & _
+                intSausageQuantity.ToString() & "; Cheese Calzone: " & _
+                intCheeseCalzoneQuantity.ToString() & "; Ravioli: " & _
+                intRavioliQuantity.ToString() & "; Spaghetti: " & _
+                intSpaghettiQuantity.ToString() & "; Fettuccini: " & _
+                intFettucciniQuantity.ToString() & "; Chef's Salad: " & _
+                intChefsQuantity.ToString() & "; Greek Salad: " & _
+                intGreekQuantity.ToString() & "; Italian Salad: " & _
+                intItalianQuantity.ToString() & decTotalPrice.ToString())
+
+
+            Dim SMTP As New SmtpClient("smtp.gmail.com")
+            SMTP.EnableSsl = True
+            SMTP.Credentials = New System.Net.NetworkCredential("resturantmenu.sfp@gmail.com", "sciencefair")
+            SMTP.Port = 587
+            SMTP.Send(Order)
+
+        End If
+    End Sub
+
+    Private Sub frmMenu_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        ' This code is executed when the form loads.
+        ' it makes itself hidden and opens the information form.
+
+        Me.Hide()
+        frmInformation.Show()
+
+    End Sub
+End Class

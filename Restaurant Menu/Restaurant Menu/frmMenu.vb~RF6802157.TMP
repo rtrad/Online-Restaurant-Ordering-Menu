@@ -1,0 +1,208 @@
+﻿Option Strict On
+
+Public Class frmMenu
+
+    Private Sub btnBeverages_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBeverages.Click
+        ' This code is executed when the user clicks the
+        ' Beverages button. It makes the drink selections
+        ' visible and everything else invisible.
+
+        Me.pnlBeveragesMain.Visible = True
+        Me.lblSodas.Visible = True
+        Me.lblSodaMessage.Visible = True
+        Me.lblJuices.Visible = True
+        Me.pnlWaterNote.Visible = True
+        Me.lblWaterNote.Visible = True
+        Me.pnlSodas.Visible = False
+        Me.lblCola.Visible = False
+        Me.lblLemonLime.Visible = False
+        Me.lblGrape.Visible = False
+        Me.pnlJuices.Visible = False
+        Me.lblOrange.Visible = False
+        Me.lblApple.Visible = False
+        Me.lblLemonade.Visible = False
+        Me.picCola.Visible = False
+        Me.picCola2.Visible = False
+        Me.btnAddCola.Visible = False
+        Me.picLemonLime.Visible = False
+        Me.picLemonLime2.Visible = False
+        Me.btnAddLemonLime.Visible = False
+        Me.picGrape.Visible = False
+        Me.picGrape2.Visible = False
+        Me.btnAddGrape.Visible = False
+        Me.picOrange.Visible = False
+        Me.picOrange2.Visible = False
+        Me.btnAddOrange.Visible = False
+        Me.picApple.Visible = False
+        Me.btnAddApple.Visible = False
+        Me.picLemonade.Visible = False
+        Me.btnAddLemonade.Visible = False
+
+    End Sub
+
+    Private Sub lblSodas_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles lblSodas.MouseHover
+        ' This code is executed when the user hovers over
+        ' the Sodas label. It displays the types of sodas
+        ' and makes the juices invisible.
+
+        Me.pnlSodas.Visible = True
+        Me.lblCola.Visible = True
+        Me.lblLemonLime.Visible = True
+        Me.lblGrape.Visible = True
+        Me.pnlJuices.Visible = False
+        Me.lblOrange.Visible = False
+        Me.lblApple.Visible = False
+        Me.lblLemonade.Visible = False
+        Me.picCola.Visible = False
+        Me.picCola2.Visible = False
+        Me.btnAddCola.Visible = False
+        Me.picLemonLime.Visible = False
+        Me.picLemonLime2.Visible = False
+        Me.btnAddLemonLime.Visible = False
+        Me.picGrape.Visible = False
+        Me.picGrape2.Visible = False
+        Me.btnAddGrape.Visible = False
+        Me.picOrange.Visible = False
+        Me.picOrange2.Visible = False
+        Me.btnAddOrange.Visible = False
+        Me.picApple.Visible = False
+        Me.btnAddApple.Visible = False
+        Me.picLemonade.Visible = False
+        Me.btnAddLemonade.Visible = False
+
+    End Sub
+
+    Private Sub lblJuices_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles lblJuices.MouseHover
+        ' This code is executed when the user hovers over
+        ' the Juices label. It displays the types of juices
+        ' and makes the sodas invisible.
+
+        Me.pnlJuices.Visible = True
+        Me.lblOrange.Visible = True
+        Me.lblApple.Visible = True
+        Me.lblLemonade.Visible = True
+        Me.pnlSodas.Visible = False
+        Me.lblCola.Visible = False
+        Me.lblLemonLime.Visible = False
+        Me.lblGrape.Visible = False
+        Me.picCola.Visible = False
+        Me.picCola2.Visible = False
+        Me.btnAddCola.Visible = False
+        Me.picLemonLime.Visible = False
+        Me.picLemonLime2.Visible = False
+        Me.btnAddLemonLime.Visible = False
+        Me.picGrape.Visible = False
+        Me.picGrape2.Visible = False
+        Me.btnAddGrape.Visible = False
+        Me.picOrange.Visible = False
+        Me.picOrange2.Visible = False
+        Me.btnAddOrange.Visible = False
+        Me.picApple.Visible = False
+        Me.btnAddApple.Visible = False
+        Me.picLemonade.Visible = False
+        Me.btnAddLemonade.Visible = False
+
+    End Sub
+
+    Private Sub lblCola_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles lblCola.MouseHover
+        ' This code is executed when the user hovers over
+        ' the Cola label. It makes the other pictures 
+        ' invisible and makes the Cola pictures visible
+        ' along with the Add To Receipt button.
+
+        Me.btnAddCola.Visible = True
+        Me.picCola2.Visible = True
+        Me.picCola.Visible = True
+        Me.picLemonLime.Visible = False
+        Me.picLemonLime2.Visible = False
+        Me.btnAddLemonLime.Visible = False
+        Me.picGrape.Visible = False
+        Me.picGrape2.Visible = False
+        Me.btnAddGrape.Visible = False
+
+    End Sub
+
+    Private Sub lblLemonLime_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles lblLemonLime.MouseHover
+        ' This code is executed when the user hovers over
+        ' the Lemon-Lime label. It makes the other pictures
+        ' invisible and makes the Lemon-Lime pictures visible 
+        ' along with the Add To Receipt button.
+
+        Me.btnAddLemonLime.Visible = True
+        Me.picLemonLime2.Visible = True
+        Me.picLemonLime.Visible = True
+        Me.picCola.Visible = False
+        Me.picCola2.Visible = False
+        Me.btnAddCola.Visible = False
+        Me.picGrape.Visible = False
+        Me.picGrape2.Visible = False
+        Me.btnAddGrape.Visible = False
+
+    End Sub
+
+    Private Sub lblGrape_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles lblGrape.MouseHover
+        ' This code is executed when the user hovers over
+        ' the Grape label. It makes the other pictures
+        ' invisible and makes the Grape pictures visible 
+        ' along with the Add To Receipt button.
+
+        Me.btnAddGrape.Visible = True
+        Me.picGrape2.Visible = True
+        Me.picGrape.Visible = True
+        Me.picCola.Visible = False
+        Me.picCola2.Visible = False
+        Me.btnAddCola.Visible = False
+        Me.picLemonLime.Visible = False
+        Me.picLemonLime2.Visible = False
+        Me.btnAddLemonLime.Visible = False
+
+    End Sub
+
+    Private Sub lblOrange_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles lblOrange.MouseHover
+        ' This code is executed when the user hovers over
+        ' the Orange label. It makes the other pictures
+        ' invisible and makes the Orange pictures visible 
+        ' along with the Add To Receipt button.
+
+        Me.btnAddOrange.Visible = True
+        Me.picOrange2.Visible = True
+        Me.picOrange.Visible = True
+        Me.picApple.Visible = False
+        Me.btnAddApple.Visible = False
+        Me.picLemonade.Visible = False
+        Me.btnAddLemonade.Visible = False
+
+    End Sub
+
+    Private Sub lblApple_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles lblApple.MouseHover
+        ' This code is executed when the user hovers over
+        ' the Apple label. It makes the other pictures
+        ' invisible and makes the Apple picture visible 
+        ' along with the Add To Receipt button.
+
+        Me.btnAddApple.Visible = True
+        Me.picApple.Visible = True
+        Me.picOrange.Visible = False
+        Me.picOrange2.Visible = False
+        Me.btnAddOrange.Visible = False
+        Me.picLemonade.Visible = False
+        Me.btnAddLemonade.Visible = False
+
+    End Sub
+
+    Private Sub lblLemonade_MouseHover(ByVal sender As Object, ByVal e As System.EventArgs) Handles lblLemonade.MouseHover
+        ' This code is executed when the user hovers over
+        ' the Lemonade label. It makes the other pictures
+        ' invisible and makes the Lemonade picture visible 
+        ' along with the Add To Receipt button.
+
+        Me.btnAddLemonade.Visible = True
+        Me.picLemonade.Visible = True
+        Me.picOrange.Visible = False
+        Me.picOrange2.Visible = False
+        Me.btnAddOrange.Visible = False
+        Me.picApple.Visible = False
+        Me.btnAddApple.Visible = False
+
+    End Sub
+End Class

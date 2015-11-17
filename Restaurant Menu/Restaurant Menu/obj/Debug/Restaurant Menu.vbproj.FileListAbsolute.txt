@@ -1,0 +1,25 @@
+C:\Users\46730\Desktop\Restaurant Menu\Restaurant Menu\bin\Debug\Restaurant Menu.exe
+C:\Users\46730\Desktop\Restaurant Menu\Restaurant Menu\bin\Debug\Restaurant Menu.pdb
+C:\Users\46730\Desktop\Restaurant Menu\Restaurant Menu\bin\Debug\Restaurant Menu.xml
+C:\Users\46730\Desktop\Restaurant Menu\Restaurant Menu\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\46730\Desktop\Restaurant Menu\Restaurant Menu\obj\Debug\Restaurant_Menu.frmMenu.resources
+C:\Users\46730\Desktop\Restaurant Menu\Restaurant Menu\obj\Debug\Restaurant_Menu.Resources.resources
+C:\Users\46730\Desktop\Restaurant Menu\Restaurant Menu\obj\Debug\Restaurant Menu.vbproj.GenerateResource.Cache
+C:\Users\46730\Desktop\Restaurant Menu\Restaurant Menu\obj\Debug\Restaurant Menu.exe
+C:\Users\46730\Desktop\Restaurant Menu\Restaurant Menu\obj\Debug\Restaurant Menu.xml
+C:\Users\46730\Desktop\Restaurant Menu\Restaurant Menu\obj\Debug\Restaurant Menu.pdb
+C:\Users\46730\Desktop\Restaurant Menu\Restaurant Menu\obj\Debug\Restaurant_Menu.frmInformation.resources
+E:\Biology\Science Fair Project\Restaurant Menu\Restaurant Menu\obj\Debug\Restaurant Menu.exe
+E:\Biology\Science Fair Project\Restaurant Menu\Restaurant Menu\obj\Debug\Restaurant Menu.xml
+E:\Biology\Science Fair Project\Restaurant Menu\Restaurant Menu\obj\Debug\Restaurant Menu.pdb
+F:\Biology\Science Fair Project\Restaurant Menu\Restaurant Menu\obj\Debug\Restaurant Menu.exe
+F:\Biology\Science Fair Project\Restaurant Menu\Restaurant Menu\obj\Debug\Restaurant Menu.xml
+F:\Biology\Science Fair Project\Restaurant Menu\Restaurant Menu\obj\Debug\Restaurant Menu.pdb
+F:\Biology\Science Fair Project\Restaurant Menu\Restaurant Menu\bin\Debug\Restaurant Menu.exe
+F:\Biology\Science Fair Project\Restaurant Menu\Restaurant Menu\bin\Debug\Restaurant Menu.pdb
+F:\Biology\Science Fair Project\Restaurant Menu\Restaurant Menu\bin\Debug\Restaurant Menu.xml
+F:\Biology\Science Fair Project\Restaurant Menu\Restaurant Menu\obj\Debug\ResolveAssemblyReference.cache
+F:\Biology\Science Fair Project\Restaurant Menu\Restaurant Menu\obj\Debug\Restaurant_Menu.frmInformation.resources
+F:\Biology\Science Fair Project\Restaurant Menu\Restaurant Menu\obj\Debug\Restaurant_Menu.frmMenu.resources
+F:\Biology\Science Fair Project\Restaurant Menu\Restaurant Menu\obj\Debug\Restaurant_Menu.Resources.resources
+F:\Biology\Science Fair Project\Restaurant Menu\Restaurant Menu\obj\Debug\Restaurant Menu.vbproj.GenerateResource.Cache

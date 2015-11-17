@@ -1,0 +1,863 @@
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class frmMenu
+    Inherits System.Windows.Forms.Form
+
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        Try
+            If disposing AndAlso components IsNot Nothing Then
+                components.Dispose()
+            End If
+        Finally
+            MyBase.Dispose(disposing)
+        End Try
+    End Sub
+
+    'Required by the Windows Form Designer
+    Private components As System.ComponentModel.IContainer
+
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
+    <System.Diagnostics.DebuggerStepThrough()> _
+    Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMenu))
+        Me.lblMuroDiMatoni = New System.Windows.Forms.Label
+        Me.btnBeverages = New System.Windows.Forms.Button
+        Me.btnDesserts = New System.Windows.Forms.Button
+        Me.btnEntrees = New System.Windows.Forms.Button
+        Me.pnlBeveragesMain = New System.Windows.Forms.Panel
+        Me.lblSodaMessage = New System.Windows.Forms.Label
+        Me.lblJuices = New System.Windows.Forms.Label
+        Me.lblSodas = New System.Windows.Forms.Label
+        Me.pnlSodas = New System.Windows.Forms.Panel
+        Me.lblGrape = New System.Windows.Forms.Label
+        Me.lblLemonLime = New System.Windows.Forms.Label
+        Me.lblCola = New System.Windows.Forms.Label
+        Me.pnlJuices = New System.Windows.Forms.Panel
+        Me.lblLemonade = New System.Windows.Forms.Label
+        Me.lblOrange = New System.Windows.Forms.Label
+        Me.lblApple = New System.Windows.Forms.Label
+        Me.pnlWaterNote = New System.Windows.Forms.Panel
+        Me.lblWaterNote = New System.Windows.Forms.Label
+        Me.picApple = New System.Windows.Forms.PictureBox
+        Me.picOrange = New System.Windows.Forms.PictureBox
+        Me.btnAddCola = New System.Windows.Forms.Button
+        Me.btnAddLemonLime = New System.Windows.Forms.Button
+        Me.btnAddGrape = New System.Windows.Forms.Button
+        Me.btnAddOrange = New System.Windows.Forms.Button
+        Me.btnAddApple = New System.Windows.Forms.Button
+        Me.btnAddLemonade = New System.Windows.Forms.Button
+        Me.picReciept = New System.Windows.Forms.PictureBox
+        Me.picLemonade = New System.Windows.Forms.PictureBox
+        Me.picOrange2 = New System.Windows.Forms.PictureBox
+        Me.picGrape2 = New System.Windows.Forms.PictureBox
+        Me.picGrape = New System.Windows.Forms.PictureBox
+        Me.picLemonLime2 = New System.Windows.Forms.PictureBox
+        Me.picLemonLime = New System.Windows.Forms.PictureBox
+        Me.picCola2 = New System.Windows.Forms.PictureBox
+        Me.picCola = New System.Windows.Forms.PictureBox
+        Me.btnTotal = New System.Windows.Forms.Button
+        Me.picPizza = New System.Windows.Forms.PictureBox
+        Me.picTopBar = New System.Windows.Forms.PictureBox
+        Me.lstReciept = New System.Windows.Forms.ListBox
+        Me.btnClearReciept = New System.Windows.Forms.Button
+        Me.picWall = New System.Windows.Forms.PictureBox
+        Me.pnlEntrees = New System.Windows.Forms.Panel
+        Me.Label2 = New System.Windows.Forms.Label
+        Me.lblPizza = New System.Windows.Forms.Label
+        Me.Panel2 = New System.Windows.Forms.Panel
+        Me.Label1 = New System.Windows.Forms.Label
+        Me.Label3 = New System.Windows.Forms.Label
+        Me.Label4 = New System.Windows.Forms.Label
+        Me.Label5 = New System.Windows.Forms.Label
+        Me.pnlPizzas = New System.Windows.Forms.Panel
+        Me.Label6 = New System.Windows.Forms.Label
+        Me.Label7 = New System.Windows.Forms.Label
+        Me.lblCheese = New System.Windows.Forms.Label
+        Me.pnlBeveragesMain.SuspendLayout()
+        Me.pnlSodas.SuspendLayout()
+        Me.pnlJuices.SuspendLayout()
+        Me.pnlWaterNote.SuspendLayout()
+        CType(Me.picApple, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picOrange, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picReciept, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLemonade, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picOrange2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picGrape2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picGrape, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLemonLime2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLemonLime, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picCola2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picCola, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picPizza, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picTopBar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picWall, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlEntrees.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        Me.pnlPizzas.SuspendLayout()
+        Me.SuspendLayout()
+        '
+        'lblMuroDiMatoni
+        '
+        Me.lblMuroDiMatoni.AutoSize = True
+        Me.lblMuroDiMatoni.BackColor = System.Drawing.Color.Transparent
+        Me.lblMuroDiMatoni.Font = New System.Drawing.Font("Magneto", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMuroDiMatoni.ForeColor = System.Drawing.Color.ForestGreen
+        Me.lblMuroDiMatoni.Location = New System.Drawing.Point(77, 12)
+        Me.lblMuroDiMatoni.Name = "lblMuroDiMatoni"
+        Me.lblMuroDiMatoni.Size = New System.Drawing.Size(454, 58)
+        Me.lblMuroDiMatoni.TabIndex = 14
+        Me.lblMuroDiMatoni.Text = "Muro di Mattoni"
+        '
+        'btnBeverages
+        '
+        Me.btnBeverages.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick
+        Me.btnBeverages.FlatAppearance.BorderSize = 3
+        Me.btnBeverages.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Firebrick
+        Me.btnBeverages.FlatAppearance.MouseOverBackColor = System.Drawing.Color.ForestGreen
+        Me.btnBeverages.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBeverages.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBeverages.Location = New System.Drawing.Point(17, 105)
+        Me.btnBeverages.Name = "btnBeverages"
+        Me.btnBeverages.Size = New System.Drawing.Size(124, 38)
+        Me.btnBeverages.TabIndex = 16
+        Me.btnBeverages.Text = "Beverages"
+        Me.btnBeverages.UseVisualStyleBackColor = True
+        '
+        'btnDesserts
+        '
+        Me.btnDesserts.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick
+        Me.btnDesserts.FlatAppearance.BorderSize = 3
+        Me.btnDesserts.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.btnDesserts.FlatAppearance.MouseOverBackColor = System.Drawing.Color.ForestGreen
+        Me.btnDesserts.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDesserts.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDesserts.Location = New System.Drawing.Point(565, 105)
+        Me.btnDesserts.Name = "btnDesserts"
+        Me.btnDesserts.Size = New System.Drawing.Size(124, 38)
+        Me.btnDesserts.TabIndex = 17
+        Me.btnDesserts.Tag = ""
+        Me.btnDesserts.Text = "Desserts"
+        Me.btnDesserts.UseVisualStyleBackColor = True
+        '
+        'btnEntrees
+        '
+        Me.btnEntrees.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick
+        Me.btnEntrees.FlatAppearance.BorderSize = 3
+        Me.btnEntrees.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.btnEntrees.FlatAppearance.MouseOverBackColor = System.Drawing.Color.ForestGreen
+        Me.btnEntrees.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnEntrees.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnEntrees.Location = New System.Drawing.Point(291, 105)
+        Me.btnEntrees.Name = "btnEntrees"
+        Me.btnEntrees.Size = New System.Drawing.Size(124, 38)
+        Me.btnEntrees.TabIndex = 18
+        Me.btnEntrees.Text = "Entrées"
+        Me.btnEntrees.UseVisualStyleBackColor = True
+        '
+        'pnlBeveragesMain
+        '
+        Me.pnlBeveragesMain.BackColor = System.Drawing.Color.Transparent
+        Me.pnlBeveragesMain.Controls.Add(Me.pnlEntrees)
+        Me.pnlBeveragesMain.Controls.Add(Me.lblSodaMessage)
+        Me.pnlBeveragesMain.Controls.Add(Me.lblJuices)
+        Me.pnlBeveragesMain.Controls.Add(Me.lblSodas)
+        Me.pnlBeveragesMain.Location = New System.Drawing.Point(17, 192)
+        Me.pnlBeveragesMain.Name = "pnlBeveragesMain"
+        Me.pnlBeveragesMain.Size = New System.Drawing.Size(124, 236)
+        Me.pnlBeveragesMain.TabIndex = 20
+        Me.pnlBeveragesMain.Visible = False
+        '
+        'lblSodaMessage
+        '
+        Me.lblSodaMessage.AutoSize = True
+        Me.lblSodaMessage.Font = New System.Drawing.Font("Bookman Old Style", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSodaMessage.Location = New System.Drawing.Point(3, 48)
+        Me.lblSodaMessage.Name = "lblSodaMessage"
+        Me.lblSodaMessage.Size = New System.Drawing.Size(93, 36)
+        Me.lblSodaMessage.TabIndex = 2
+        Me.lblSodaMessage.Text = "*Free Refills " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "on Sodas"
+        Me.lblSodaMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblSodaMessage.Visible = False
+        '
+        'lblJuices
+        '
+        Me.lblJuices.AutoSize = True
+        Me.lblJuices.Font = New System.Drawing.Font("Bookman Old Style", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblJuices.Location = New System.Drawing.Point(3, 159)
+        Me.lblJuices.Name = "lblJuices"
+        Me.lblJuices.Size = New System.Drawing.Size(115, 48)
+        Me.lblJuices.TabIndex = 1
+        Me.lblJuices.Text = "Juices" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "      $1.49" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.lblJuices.Visible = False
+        '
+        'lblSodas
+        '
+        Me.lblSodas.AutoSize = True
+        Me.lblSodas.Font = New System.Drawing.Font("Bookman Old Style", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSodas.Location = New System.Drawing.Point(3, 0)
+        Me.lblSodas.Name = "lblSodas"
+        Me.lblSodas.Size = New System.Drawing.Size(115, 48)
+        Me.lblSodas.TabIndex = 0
+        Me.lblSodas.Text = "Sodas" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "      $1.99" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.lblSodas.Visible = False
+        '
+        'pnlSodas
+        '
+        Me.pnlSodas.Controls.Add(Me.pnlPizzas)
+        Me.pnlSodas.Controls.Add(Me.lblGrape)
+        Me.pnlSodas.Controls.Add(Me.lblLemonLime)
+        Me.pnlSodas.Controls.Add(Me.lblCola)
+        Me.pnlSodas.Location = New System.Drawing.Point(147, 192)
+        Me.pnlSodas.Name = "pnlSodas"
+        Me.pnlSodas.Size = New System.Drawing.Size(144, 73)
+        Me.pnlSodas.TabIndex = 21
+        Me.pnlSodas.Visible = False
+        '
+        'lblGrape
+        '
+        Me.lblGrape.AutoSize = True
+        Me.lblGrape.Font = New System.Drawing.Font("Bookman Old Style", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblGrape.Location = New System.Drawing.Point(3, 46)
+        Me.lblGrape.Name = "lblGrape"
+        Me.lblGrape.Size = New System.Drawing.Size(66, 21)
+        Me.lblGrape.TabIndex = 3
+        Me.lblGrape.Text = "Grape"
+        Me.lblGrape.Visible = False
+        '
+        'lblLemonLime
+        '
+        Me.lblLemonLime.AutoSize = True
+        Me.lblLemonLime.Font = New System.Drawing.Font("Bookman Old Style", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLemonLime.Location = New System.Drawing.Point(3, 23)
+        Me.lblLemonLime.Name = "lblLemonLime"
+        Me.lblLemonLime.Size = New System.Drawing.Size(126, 21)
+        Me.lblLemonLime.TabIndex = 1
+        Me.lblLemonLime.Text = "Lemon-Lime"
+        Me.lblLemonLime.Visible = False
+        '
+        'lblCola
+        '
+        Me.lblCola.AutoSize = True
+        Me.lblCola.Font = New System.Drawing.Font("Bookman Old Style", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCola.Location = New System.Drawing.Point(3, 0)
+        Me.lblCola.Name = "lblCola"
+        Me.lblCola.Size = New System.Drawing.Size(52, 21)
+        Me.lblCola.TabIndex = 0
+        Me.lblCola.Text = "Cola"
+        Me.lblCola.Visible = False
+        '
+        'pnlJuices
+        '
+        Me.pnlJuices.Controls.Add(Me.lblLemonade)
+        Me.pnlJuices.Controls.Add(Me.lblOrange)
+        Me.pnlJuices.Controls.Add(Me.lblApple)
+        Me.pnlJuices.Location = New System.Drawing.Point(147, 351)
+        Me.pnlJuices.Name = "pnlJuices"
+        Me.pnlJuices.Size = New System.Drawing.Size(144, 77)
+        Me.pnlJuices.TabIndex = 22
+        Me.pnlJuices.Visible = False
+        '
+        'lblLemonade
+        '
+        Me.lblLemonade.AutoSize = True
+        Me.lblLemonade.Font = New System.Drawing.Font("Bookman Old Style", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLemonade.Location = New System.Drawing.Point(3, 53)
+        Me.lblLemonade.Name = "lblLemonade"
+        Me.lblLemonade.Size = New System.Drawing.Size(106, 21)
+        Me.lblLemonade.TabIndex = 6
+        Me.lblLemonade.Text = "Lemonade"
+        Me.lblLemonade.Visible = False
+        '
+        'lblOrange
+        '
+        Me.lblOrange.AutoSize = True
+        Me.lblOrange.Font = New System.Drawing.Font("Bookman Old Style", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblOrange.Location = New System.Drawing.Point(3, 1)
+        Me.lblOrange.Name = "lblOrange"
+        Me.lblOrange.Size = New System.Drawing.Size(133, 21)
+        Me.lblOrange.TabIndex = 4
+        Me.lblOrange.Text = "Orange Juice"
+        Me.lblOrange.Visible = False
+        '
+        'lblApple
+        '
+        Me.lblApple.AutoSize = True
+        Me.lblApple.Font = New System.Drawing.Font("Bookman Old Style", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblApple.Location = New System.Drawing.Point(3, 27)
+        Me.lblApple.Name = "lblApple"
+        Me.lblApple.Size = New System.Drawing.Size(119, 21)
+        Me.lblApple.TabIndex = 5
+        Me.lblApple.Text = "Apple Juice"
+        Me.lblApple.Visible = False
+        '
+        'pnlWaterNote
+        '
+        Me.pnlWaterNote.Controls.Add(Me.lblWaterNote)
+        Me.pnlWaterNote.Location = New System.Drawing.Point(282, 617)
+        Me.pnlWaterNote.Name = "pnlWaterNote"
+        Me.pnlWaterNote.Size = New System.Drawing.Size(398, 33)
+        Me.pnlWaterNote.TabIndex = 23
+        Me.pnlWaterNote.Visible = False
+        '
+        'lblWaterNote
+        '
+        Me.lblWaterNote.AutoSize = True
+        Me.lblWaterNote.Font = New System.Drawing.Font("Bookman Old Style", 15.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWaterNote.Location = New System.Drawing.Point(0, 0)
+        Me.lblWaterNote.Name = "lblWaterNote"
+        Me.lblWaterNote.Size = New System.Drawing.Size(399, 22)
+        Me.lblWaterNote.TabIndex = 0
+        Me.lblWaterNote.Text = "*Water is served free with any purchase"
+        Me.lblWaterNote.Visible = False
+        '
+        'picApple
+        '
+        Me.picApple.Image = Global.Restaurant_Menu.My.Resources.Resources.apple
+        Me.picApple.Location = New System.Drawing.Point(297, 192)
+        Me.picApple.Name = "picApple"
+        Me.picApple.Size = New System.Drawing.Size(518, 406)
+        Me.picApple.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picApple.TabIndex = 39
+        Me.picApple.TabStop = False
+        Me.picApple.Visible = False
+        '
+        'picOrange
+        '
+        Me.picOrange.Image = Global.Restaurant_Menu.My.Resources.Resources.orange
+        Me.picOrange.Location = New System.Drawing.Point(297, 192)
+        Me.picOrange.Name = "picOrange"
+        Me.picOrange.Size = New System.Drawing.Size(518, 406)
+        Me.picOrange.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picOrange.TabIndex = 35
+        Me.picOrange.TabStop = False
+        Me.picOrange.Visible = False
+        '
+        'btnAddCola
+        '
+        Me.btnAddCola.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick
+        Me.btnAddCola.FlatAppearance.BorderSize = 3
+        Me.btnAddCola.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Firebrick
+        Me.btnAddCola.FlatAppearance.MouseOverBackColor = System.Drawing.Color.ForestGreen
+        Me.btnAddCola.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAddCola.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAddCola.Location = New System.Drawing.Point(677, 192)
+        Me.btnAddCola.Name = "btnAddCola"
+        Me.btnAddCola.Size = New System.Drawing.Size(138, 38)
+        Me.btnAddCola.TabIndex = 27
+        Me.btnAddCola.Text = "Add to Receipt"
+        Me.btnAddCola.UseVisualStyleBackColor = True
+        Me.btnAddCola.Visible = False
+        '
+        'btnAddLemonLime
+        '
+        Me.btnAddLemonLime.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick
+        Me.btnAddLemonLime.FlatAppearance.BorderSize = 3
+        Me.btnAddLemonLime.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Firebrick
+        Me.btnAddLemonLime.FlatAppearance.MouseOverBackColor = System.Drawing.Color.ForestGreen
+        Me.btnAddLemonLime.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAddLemonLime.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAddLemonLime.Location = New System.Drawing.Point(677, 192)
+        Me.btnAddLemonLime.Name = "btnAddLemonLime"
+        Me.btnAddLemonLime.Size = New System.Drawing.Size(138, 38)
+        Me.btnAddLemonLime.TabIndex = 31
+        Me.btnAddLemonLime.Text = "Add to Receipt"
+        Me.btnAddLemonLime.UseVisualStyleBackColor = True
+        Me.btnAddLemonLime.Visible = False
+        '
+        'btnAddGrape
+        '
+        Me.btnAddGrape.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick
+        Me.btnAddGrape.FlatAppearance.BorderSize = 3
+        Me.btnAddGrape.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Firebrick
+        Me.btnAddGrape.FlatAppearance.MouseOverBackColor = System.Drawing.Color.ForestGreen
+        Me.btnAddGrape.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAddGrape.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAddGrape.Location = New System.Drawing.Point(677, 192)
+        Me.btnAddGrape.Name = "btnAddGrape"
+        Me.btnAddGrape.Size = New System.Drawing.Size(138, 38)
+        Me.btnAddGrape.TabIndex = 34
+        Me.btnAddGrape.Text = "Add to Receipt"
+        Me.btnAddGrape.UseVisualStyleBackColor = True
+        Me.btnAddGrape.Visible = False
+        '
+        'btnAddOrange
+        '
+        Me.btnAddOrange.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick
+        Me.btnAddOrange.FlatAppearance.BorderSize = 3
+        Me.btnAddOrange.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Firebrick
+        Me.btnAddOrange.FlatAppearance.MouseOverBackColor = System.Drawing.Color.ForestGreen
+        Me.btnAddOrange.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAddOrange.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAddOrange.Location = New System.Drawing.Point(677, 192)
+        Me.btnAddOrange.Name = "btnAddOrange"
+        Me.btnAddOrange.Size = New System.Drawing.Size(138, 38)
+        Me.btnAddOrange.TabIndex = 37
+        Me.btnAddOrange.Text = "Add to Receipt"
+        Me.btnAddOrange.UseVisualStyleBackColor = True
+        Me.btnAddOrange.Visible = False
+        '
+        'btnAddApple
+        '
+        Me.btnAddApple.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick
+        Me.btnAddApple.FlatAppearance.BorderSize = 3
+        Me.btnAddApple.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Firebrick
+        Me.btnAddApple.FlatAppearance.MouseOverBackColor = System.Drawing.Color.ForestGreen
+        Me.btnAddApple.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAddApple.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAddApple.Location = New System.Drawing.Point(677, 192)
+        Me.btnAddApple.Name = "btnAddApple"
+        Me.btnAddApple.Size = New System.Drawing.Size(138, 38)
+        Me.btnAddApple.TabIndex = 40
+        Me.btnAddApple.Text = "Add to Receipt"
+        Me.btnAddApple.UseVisualStyleBackColor = True
+        Me.btnAddApple.Visible = False
+        '
+        'btnAddLemonade
+        '
+        Me.btnAddLemonade.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick
+        Me.btnAddLemonade.FlatAppearance.BorderSize = 3
+        Me.btnAddLemonade.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Firebrick
+        Me.btnAddLemonade.FlatAppearance.MouseOverBackColor = System.Drawing.Color.ForestGreen
+        Me.btnAddLemonade.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAddLemonade.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAddLemonade.Location = New System.Drawing.Point(677, 192)
+        Me.btnAddLemonade.Name = "btnAddLemonade"
+        Me.btnAddLemonade.Size = New System.Drawing.Size(138, 38)
+        Me.btnAddLemonade.TabIndex = 42
+        Me.btnAddLemonade.Text = "Add to Receipt"
+        Me.btnAddLemonade.UseVisualStyleBackColor = True
+        Me.btnAddLemonade.Visible = False
+        '
+        'picReciept
+        '
+        Me.picReciept.Image = Global.Restaurant_Menu.My.Resources.Resources.notebook_paper_559x1250_1_
+        Me.picReciept.Location = New System.Drawing.Point(821, 79)
+        Me.picReciept.Name = "picReciept"
+        Me.picReciept.Size = New System.Drawing.Size(292, 585)
+        Me.picReciept.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picReciept.TabIndex = 43
+        Me.picReciept.TabStop = False
+        '
+        'picLemonade
+        '
+        Me.picLemonade.Image = Global.Restaurant_Menu.My.Resources.Resources.lemonade
+        Me.picLemonade.Location = New System.Drawing.Point(297, 192)
+        Me.picLemonade.Name = "picLemonade"
+        Me.picLemonade.Size = New System.Drawing.Size(518, 406)
+        Me.picLemonade.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picLemonade.TabIndex = 41
+        Me.picLemonade.TabStop = False
+        Me.picLemonade.Visible = False
+        '
+        'picOrange2
+        '
+        Me.picOrange2.Image = Global.Restaurant_Menu.My.Resources.Resources.orange2
+        Me.picOrange2.Location = New System.Drawing.Point(662, 376)
+        Me.picOrange2.Name = "picOrange2"
+        Me.picOrange2.Size = New System.Drawing.Size(153, 222)
+        Me.picOrange2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picOrange2.TabIndex = 36
+        Me.picOrange2.TabStop = False
+        Me.picOrange2.Visible = False
+        '
+        'picGrape2
+        '
+        Me.picGrape2.Image = Global.Restaurant_Menu.My.Resources.Resources.grape2
+        Me.picGrape2.Location = New System.Drawing.Point(297, 482)
+        Me.picGrape2.Name = "picGrape2"
+        Me.picGrape2.Size = New System.Drawing.Size(177, 116)
+        Me.picGrape2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picGrape2.TabIndex = 32
+        Me.picGrape2.TabStop = False
+        Me.picGrape2.Visible = False
+        '
+        'picGrape
+        '
+        Me.picGrape.Image = Global.Restaurant_Menu.My.Resources.Resources.grape
+        Me.picGrape.Location = New System.Drawing.Point(297, 192)
+        Me.picGrape.Name = "picGrape"
+        Me.picGrape.Size = New System.Drawing.Size(518, 406)
+        Me.picGrape.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picGrape.TabIndex = 33
+        Me.picGrape.TabStop = False
+        Me.picGrape.Visible = False
+        '
+        'picLemonLime2
+        '
+        Me.picLemonLime2.Image = Global.Restaurant_Menu.My.Resources.Resources.lemonlime2
+        Me.picLemonLime2.Location = New System.Drawing.Point(638, 468)
+        Me.picLemonLime2.Name = "picLemonLime2"
+        Me.picLemonLime2.Size = New System.Drawing.Size(177, 130)
+        Me.picLemonLime2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picLemonLime2.TabIndex = 38
+        Me.picLemonLime2.TabStop = False
+        Me.picLemonLime2.Visible = False
+        '
+        'picLemonLime
+        '
+        Me.picLemonLime.Image = Global.Restaurant_Menu.My.Resources.Resources.lemonlime
+        Me.picLemonLime.Location = New System.Drawing.Point(297, 192)
+        Me.picLemonLime.Name = "picLemonLime"
+        Me.picLemonLime.Size = New System.Drawing.Size(518, 406)
+        Me.picLemonLime.TabIndex = 28
+        Me.picLemonLime.TabStop = False
+        Me.picLemonLime.Visible = False
+        '
+        'picCola2
+        '
+        Me.picCola2.Image = Global.Restaurant_Menu.My.Resources.Resources.Cola2
+        Me.picCola2.Location = New System.Drawing.Point(297, 418)
+        Me.picCola2.Name = "picCola2"
+        Me.picCola2.Size = New System.Drawing.Size(152, 181)
+        Me.picCola2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picCola2.TabIndex = 25
+        Me.picCola2.TabStop = False
+        Me.picCola2.Visible = False
+        '
+        'picCola
+        '
+        Me.picCola.Image = Global.Restaurant_Menu.My.Resources.Resources.Cola
+        Me.picCola.Location = New System.Drawing.Point(297, 192)
+        Me.picCola.Name = "picCola"
+        Me.picCola.Size = New System.Drawing.Size(518, 406)
+        Me.picCola.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.picCola.TabIndex = 24
+        Me.picCola.TabStop = False
+        Me.picCola.Visible = False
+        '
+        'btnTotal
+        '
+        Me.btnTotal.BackgroundImage = Global.Restaurant_Menu.My.Resources.Resources.buttonbar2
+        Me.btnTotal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnTotal.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick
+        Me.btnTotal.FlatAppearance.BorderSize = 3
+        Me.btnTotal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.btnTotal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.ForestGreen
+        Me.btnTotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTotal.ForeColor = System.Drawing.Color.Black
+        Me.btnTotal.Location = New System.Drawing.Point(821, 79)
+        Me.btnTotal.Name = "btnTotal"
+        Me.btnTotal.Size = New System.Drawing.Size(124, 91)
+        Me.btnTotal.TabIndex = 19
+        Me.btnTotal.TextAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btnTotal.UseVisualStyleBackColor = True
+        '
+        'picPizza
+        '
+        Me.picPizza.Image = Global.Restaurant_Menu.My.Resources.Resources.pizza
+        Me.picPizza.Location = New System.Drawing.Point(17, 12)
+        Me.picPizza.Name = "picPizza"
+        Me.picPizza.Size = New System.Drawing.Size(110, 58)
+        Me.picPizza.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picPizza.TabIndex = 12
+        Me.picPizza.TabStop = False
+        '
+        'picTopBar
+        '
+        Me.picTopBar.Image = Global.Restaurant_Menu.My.Resources.Resources.transparent
+        Me.picTopBar.Location = New System.Drawing.Point(-6, 79)
+        Me.picTopBar.Name = "picTopBar"
+        Me.picTopBar.Size = New System.Drawing.Size(972, 91)
+        Me.picTopBar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picTopBar.TabIndex = 6
+        Me.picTopBar.TabStop = False
+        '
+        'lstReciept
+        '
+        Me.lstReciept.FormattingEnabled = True
+        Me.lstReciept.Location = New System.Drawing.Point(846, 192)
+        Me.lstReciept.Name = "lstReciept"
+        Me.lstReciept.Size = New System.Drawing.Size(105, 407)
+        Me.lstReciept.TabIndex = 44
+        '
+        'btnClearReciept
+        '
+        Me.btnClearReciept.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick
+        Me.btnClearReciept.FlatAppearance.BorderSize = 3
+        Me.btnClearReciept.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.btnClearReciept.FlatAppearance.MouseOverBackColor = System.Drawing.Color.ForestGreen
+        Me.btnClearReciept.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClearReciept.Font = New System.Drawing.Font("Bookman Old Style", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnClearReciept.Location = New System.Drawing.Point(821, 609)
+        Me.btnClearReciept.Name = "btnClearReciept"
+        Me.btnClearReciept.Size = New System.Drawing.Size(130, 38)
+        Me.btnClearReciept.TabIndex = 45
+        Me.btnClearReciept.Text = "Clear"
+        Me.btnClearReciept.UseVisualStyleBackColor = True
+        '
+        'picWall
+        '
+        Me.picWall.BackColor = System.Drawing.Color.White
+        Me.picWall.Image = CType(resources.GetObject("picWall.Image"), System.Drawing.Image)
+        Me.picWall.Location = New System.Drawing.Point(-6, 173)
+        Me.picWall.Name = "picWall"
+        Me.picWall.Size = New System.Drawing.Size(972, 491)
+        Me.picWall.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picWall.TabIndex = 15
+        Me.picWall.TabStop = False
+        '
+        'pnlEntrees
+        '
+        Me.pnlEntrees.BackColor = System.Drawing.Color.Transparent
+        Me.pnlEntrees.Controls.Add(Me.Label5)
+        Me.pnlEntrees.Controls.Add(Me.Label2)
+        Me.pnlEntrees.Controls.Add(Me.lblPizza)
+        Me.pnlEntrees.Location = New System.Drawing.Point(0, 0)
+        Me.pnlEntrees.Name = "pnlEntrees"
+        Me.pnlEntrees.Size = New System.Drawing.Size(124, 236)
+        Me.pnlEntrees.TabIndex = 21
+        Me.pnlEntrees.Visible = False
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Bookman Old Style", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(3, 159)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(115, 48)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Juices" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "      $1.49" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Label2.Visible = False
+        '
+        'lblPizza
+        '
+        Me.lblPizza.AutoSize = True
+        Me.lblPizza.Font = New System.Drawing.Font("Bookman Old Style", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPizza.Location = New System.Drawing.Point(3, 0)
+        Me.lblPizza.Name = "lblPizza"
+        Me.lblPizza.Size = New System.Drawing.Size(122, 48)
+        Me.lblPizza.TabIndex = 0
+        Me.lblPizza.Text = "Pizza" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "     $10.99" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.lblPizza.Visible = False
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.Label1)
+        Me.Panel2.Controls.Add(Me.Label3)
+        Me.Panel2.Controls.Add(Me.Label4)
+        Me.Panel2.Location = New System.Drawing.Point(147, 271)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(144, 77)
+        Me.Panel2.TabIndex = 23
+        Me.Panel2.Visible = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Bookman Old Style", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(3, 53)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(106, 21)
+        Me.Label1.TabIndex = 6
+        Me.Label1.Text = "Lemonade"
+        Me.Label1.Visible = False
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Bookman Old Style", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(3, 1)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(133, 21)
+        Me.Label3.TabIndex = 4
+        Me.Label3.Text = "Orange Juice"
+        Me.Label3.Visible = False
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Bookman Old Style", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(3, 27)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(119, 21)
+        Me.Label4.TabIndex = 5
+        Me.Label4.Text = "Apple Juice"
+        Me.Label4.Visible = False
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Bookman Old Style", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(3, 80)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(115, 48)
+        Me.Label5.TabIndex = 2
+        Me.Label5.Text = "Calzone" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "      $1.99" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Label5.Visible = False
+        '
+        'pnlPizzas
+        '
+        Me.pnlPizzas.Controls.Add(Me.Label6)
+        Me.pnlPizzas.Controls.Add(Me.Label7)
+        Me.pnlPizzas.Controls.Add(Me.lblCheese)
+        Me.pnlPizzas.Location = New System.Drawing.Point(0, 0)
+        Me.pnlPizzas.Name = "pnlPizzas"
+        Me.pnlPizzas.Size = New System.Drawing.Size(144, 73)
+        Me.pnlPizzas.TabIndex = 22
+        Me.pnlPizzas.Visible = False
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Bookman Old Style", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(3, 46)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(66, 21)
+        Me.Label6.TabIndex = 3
+        Me.Label6.Text = "Grape"
+        Me.Label6.Visible = False
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Bookman Old Style", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(3, 23)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(126, 21)
+        Me.Label7.TabIndex = 1
+        Me.Label7.Text = "Lemon-Lime"
+        Me.Label7.Visible = False
+        '
+        'lblCheese
+        '
+        Me.lblCheese.AutoSize = True
+        Me.lblCheese.Font = New System.Drawing.Font("Bookman Old Style", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCheese.Location = New System.Drawing.Point(3, 0)
+        Me.lblCheese.Name = "lblCheese"
+        Me.lblCheese.Size = New System.Drawing.Size(52, 21)
+        Me.lblCheese.TabIndex = 0
+        Me.lblCheese.Text = "Cola"
+        Me.lblCheese.Visible = False
+        '
+        'frmMenu
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(963, 662)
+        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.btnAddLemonade)
+        Me.Controls.Add(Me.picLemonade)
+        Me.Controls.Add(Me.btnAddApple)
+        Me.Controls.Add(Me.picApple)
+        Me.Controls.Add(Me.btnAddOrange)
+        Me.Controls.Add(Me.picOrange2)
+        Me.Controls.Add(Me.picOrange)
+        Me.Controls.Add(Me.picGrape2)
+        Me.Controls.Add(Me.btnAddGrape)
+        Me.Controls.Add(Me.picGrape)
+        Me.Controls.Add(Me.btnAddLemonLime)
+        Me.Controls.Add(Me.picLemonLime2)
+        Me.Controls.Add(Me.picLemonLime)
+        Me.Controls.Add(Me.picCola2)
+        Me.Controls.Add(Me.btnAddCola)
+        Me.Controls.Add(Me.picCola)
+        Me.Controls.Add(Me.btnClearReciept)
+        Me.Controls.Add(Me.lstReciept)
+        Me.Controls.Add(Me.btnTotal)
+        Me.Controls.Add(Me.btnEntrees)
+        Me.Controls.Add(Me.btnDesserts)
+        Me.Controls.Add(Me.btnBeverages)
+        Me.Controls.Add(Me.picTopBar)
+        Me.Controls.Add(Me.picReciept)
+        Me.Controls.Add(Me.pnlWaterNote)
+        Me.Controls.Add(Me.pnlJuices)
+        Me.Controls.Add(Me.pnlSodas)
+        Me.Controls.Add(Me.pnlBeveragesMain)
+        Me.Controls.Add(Me.lblMuroDiMatoni)
+        Me.Controls.Add(Me.picPizza)
+        Me.Controls.Add(Me.picWall)
+        Me.MaximizeBox = False
+        Me.Name = "frmMenu"
+        Me.Text = "Muro di Mattoni"
+        Me.pnlBeveragesMain.ResumeLayout(False)
+        Me.pnlBeveragesMain.PerformLayout()
+        Me.pnlSodas.ResumeLayout(False)
+        Me.pnlSodas.PerformLayout()
+        Me.pnlJuices.ResumeLayout(False)
+        Me.pnlJuices.PerformLayout()
+        Me.pnlWaterNote.ResumeLayout(False)
+        Me.pnlWaterNote.PerformLayout()
+        CType(Me.picApple, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picOrange, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picReciept, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLemonade, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picOrange2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picGrape2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picGrape, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLemonLime2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLemonLime, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picCola2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picCola, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picPizza, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picTopBar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picWall, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlEntrees.ResumeLayout(False)
+        Me.pnlEntrees.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
+        Me.pnlPizzas.ResumeLayout(False)
+        Me.pnlPizzas.PerformLayout()
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
+
+    End Sub
+    Friend WithEvents picTopBar As System.Windows.Forms.PictureBox
+    Friend WithEvents lblMuroDiMatoni As System.Windows.Forms.Label
+    Friend WithEvents picPizza As System.Windows.Forms.PictureBox
+    Friend WithEvents btnBeverages As System.Windows.Forms.Button
+    Friend WithEvents btnDesserts As System.Windows.Forms.Button
+    Friend WithEvents btnEntrees As System.Windows.Forms.Button
+    Friend WithEvents btnTotal As System.Windows.Forms.Button
+    Friend WithEvents pnlBeveragesMain As System.Windows.Forms.Panel
+    Friend WithEvents lblSodas As System.Windows.Forms.Label
+    Friend WithEvents pnlSodas As System.Windows.Forms.Panel
+    Friend WithEvents lblJuices As System.Windows.Forms.Label
+    Friend WithEvents pnlJuices As System.Windows.Forms.Panel
+    Friend WithEvents pnlWaterNote As System.Windows.Forms.Panel
+    Friend WithEvents lblWaterNote As System.Windows.Forms.Label
+    Friend WithEvents lblCola As System.Windows.Forms.Label
+    Friend WithEvents lblGrape As System.Windows.Forms.Label
+    Friend WithEvents lblLemonLime As System.Windows.Forms.Label
+    Friend WithEvents lblLemonade As System.Windows.Forms.Label
+    Friend WithEvents lblOrange As System.Windows.Forms.Label
+    Friend WithEvents lblApple As System.Windows.Forms.Label
+    Friend WithEvents picCola As System.Windows.Forms.PictureBox
+    Friend WithEvents picCola2 As System.Windows.Forms.PictureBox
+    Friend WithEvents btnAddCola As System.Windows.Forms.Button
+    Friend WithEvents picLemonLime As System.Windows.Forms.PictureBox
+    Friend WithEvents btnAddLemonLime As System.Windows.Forms.Button
+    Friend WithEvents picGrape2 As System.Windows.Forms.PictureBox
+    Friend WithEvents picGrape As System.Windows.Forms.PictureBox
+    Friend WithEvents btnAddGrape As System.Windows.Forms.Button
+    Friend WithEvents lblSodaMessage As System.Windows.Forms.Label
+    Friend WithEvents picOrange As System.Windows.Forms.PictureBox
+    Friend WithEvents picOrange2 As System.Windows.Forms.PictureBox
+    Friend WithEvents btnAddOrange As System.Windows.Forms.Button
+    Friend WithEvents picLemonLime2 As System.Windows.Forms.PictureBox
+    Friend WithEvents picApple As System.Windows.Forms.PictureBox
+    Friend WithEvents btnAddApple As System.Windows.Forms.Button
+    Friend WithEvents picLemonade As System.Windows.Forms.PictureBox
+    Friend WithEvents btnAddLemonade As System.Windows.Forms.Button
+    Friend WithEvents picReciept As System.Windows.Forms.PictureBox
+    Friend WithEvents lstReciept As System.Windows.Forms.ListBox
+    Friend WithEvents btnClearReciept As System.Windows.Forms.Button
+    Friend WithEvents picWall As System.Windows.Forms.PictureBox
+    Friend WithEvents pnlEntrees As System.Windows.Forms.Panel
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents lblPizza As System.Windows.Forms.Label
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents pnlPizzas As System.Windows.Forms.Panel
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents lblCheese As System.Windows.Forms.Label
+
+End Class
